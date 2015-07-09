@@ -1,0 +1,121 @@
+  
+@import "notice.less";
+// Core variables and mixins
+
+@import "variables_modernized.less";
+@import "mixins.less";
+@import (less) "userstyles.css";
+
+// Reset and dependencies
+@import "normalize.less";
+@import "print.less";
+
+
+// Core CSS
+@import "scaffolding.less";
+@import "code.less";
+@import "grid.less";
+@import "tables.less";
+@import "forms.less";
+@import "buttons.less";
+
+// Components
+@import "component-animations.less";
+@import "dropdowns.less";
+@import "button-groups.less";
+@import "input-groups.less";
+@import "navs.less";
+@import "navbar.less";
+@import "breadcrumbs.less";
+@import "pagination.less";
+@import "pager.less";
+@import "labels.less";
+@import "badges.less";
+@import "jumbotron.less";
+@import "thumbnails.less";
+@import "alerts.less";
+@import "progress-bars.less";
+@import "media.less";
+@import "list-group.less";
+@import "panels.less";
+
+// Utility classes
+@import "utilities.less";
+@import "responsive-utilities.less";
+
+//User Theme
+@import "modernized.less";
+
+//Custom Styles on top of theme
+//Experimental
+.itemviews a {padding-top:5px !important; padding-bottom:5px !important; padding-right:10px !important; padding-left:5px !important}
+.submenu a {padding-left:5px !important; padding-top:5px !important; padding-bottom:5px !important; font-size:14px}
+
+//Home Page
+.moin-topnav{
+    margin-bottom: 0px;
+    font-size:14px;
+}
+
+.moin-topnav-container{
+    margin-left: 2px;
+    padding-left: 20px;
+}
+.moin-logo{
+    padding-bottom: 4px;
+    padding-top: 0.5px;
+    margin-right: 5px;
+}
+//Global History Page
+.set-bookmark-btn{
+    margin-left: 107px;
+}
+.history-panel{
+    padding-bottom: 0px;
+    padding-left: 0px;
+    padding-top: 0px;
+    padding-right: 0px;
+}
+.history-table{
+    margin-bottom: 0px;
+}
+.del-bookmark-btn{
+    margin-left: 25px;
+}
+
+//Universal
+
+.moin-itemviews{
+    .nav;
+    .nav-tabs;
+}
+
+    .breadcrumb a {
+        color: white;
+    }
+.breadcrumb{
+    color:white;
+    background-color:#444EB6;
+    margin-bottom:0px;
+    padding-top:0px;
+    padding-right:0px;
+    font-size:11px;
+    padding-bottom:0;
+    padding-left: 10px;
+
+}
+.footer{
+  bottom: 0;
+  width: 100%;
+  height: 90px;
+  background-color: #444EB6;
+}
+
+
+// Overriding default settings in common.css
+h1,h2,h3,h4,h5,h6{
+  border-color: #3F51B5;
+}
+
+
+
