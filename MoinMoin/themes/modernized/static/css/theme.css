@@ -5746,3 +5746,9 @@ td p {
   margin: 0;
   padding: 0;
 }
+.modernized-index-pagination {
+  margin-left: 8%;
+}
+.moin-contenttypes-wrapper form input[type="submit"] {
+  margin-top: -5%;
+}
