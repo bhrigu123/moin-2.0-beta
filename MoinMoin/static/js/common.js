@@ -21,7 +21,7 @@ MoinMoin.prototype.moinFlashMessage = function (classes, message) {
 MoinMoin.prototype.selected_link = function () {
     "use strict";
     var selected = window.location.pathname,
-        list = $('.panel'),
+        list = $('.moin-panel'),
         i,
         j,
         nav_links,
@@ -33,7 +33,7 @@ MoinMoin.prototype.selected_link = function () {
             link = nav_links[i].attributes.href.value;
 
             if (link === selected) {
-                nav_links[i].setAttribute('class', 'current-link');
+                nav_links[i].parentElement.setAttribute('class', 'active');;
                 break;
             }
         }
