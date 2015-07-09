@@ -13,8 +13,7 @@
     <link rel="alternate" title="Global History" href="{{ url_for('feed.atom') }}" type="application/atom+xml" />
 {% endblock %}
 {% block content %}
-<h1>{{ _("Global History") }}</h1>
-<br>
+    <h1>{{ _("Global History") }}</h1>
 {% for day, revs in history %}
   {% set latest_timestamp = revs[0].meta['mtime'] %}
   <div class="panel panel-primary">

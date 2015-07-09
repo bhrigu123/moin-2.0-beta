@@ -5359,18 +5359,10 @@ input[type=number].input-lg,
   padding-bottom: 5px !important;
   font-size: 14px;
 }
-.moin-topnav {
-  margin-bottom: 0px;
-  font-size: 14px;
-}
-.moin-topnav-container {
-  margin-left: 2px;
+.navbar-brand {
+  height: 70px;
+  padding-top: 10px;
   padding-left: 20px;
-}
-.moin-logo {
-  padding-bottom: 4px;
-  padding-top: 0.5px;
-  margin-right: 5px;
 }
 .set-bookmark-btn {
   margin-left: 107px;
@@ -5556,37 +5548,37 @@ input[type=number].input-lg,
   color: white;
 }
 .moin-button {
-  display: inline-block;
-  margin-bottom: 0;
-  font-weight: normal;
-  text-align: center;
-  vertical-align: middle;
-  touch-action: manipulation;
-  cursor: pointer;
-  background-image: none;
-  border: 1px solid transparent;
-  white-space: nowrap;
-  padding: 6px 16px;
-  font-size: 13px;
-  line-height: 1.846;
-  border-radius: 3px;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  text-transform: uppercase;
-  border-right: none;
-  border-bottom: none;
-  -webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
-  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
-  -webkit-transition: all 0.2s;
-  -o-transition: all 0.2s;
-  transition: all 0.2s;
-  color: #ffffff;
-  background-color: #3f51b5;
-  border-color: transparent;
-  background-size: 200%;
-  background-position: 50%;
+  display: inline-block !important;
+  margin-bottom: 0 !important;
+  font-weight: normal !important;
+  text-align: center !important;
+  vertical-align: middle !important;
+  touch-action: manipulation !important;
+  cursor: pointer !important;
+  background-image: none !important;
+  border: 1px solid transparent !important;
+  white-space: nowrap !important;
+  padding: 6px 16px !important;
+  font-size: 13px !important;
+  line-height: 1.846 !important;
+  border-radius: 3px !important;
+  -webkit-user-select: none !important;
+  -moz-user-select: none !important;
+  -ms-user-select: none !important;
+  user-select: none !important;
+  text-transform: uppercase !important;
+  border-right: none !important;
+  border-bottom: none !important;
+  -webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3) !important;
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3) !important;
+  -webkit-transition: all 0.2s !important;
+  -o-transition: all 0.2s !important;
+  transition: all 0.2s !important;
+  color: #ffffff !important;
+  background-color: #3f51b5 !important;
+  border-color: transparent !important;
+  background-size: 200% !important;
+  background-position: 50% !important;
 }
 .moin-button:focus,
 .moin-button:active:focus,
@@ -5594,65 +5586,65 @@ input[type=number].input-lg,
 .moin-button.focus,
 .moin-button:active.focus,
 .moin-button.active.focus {
-  outline: thin dotted;
-  outline: 5px auto -webkit-focus-ring-color;
-  outline-offset: -2px;
+  outline: thin dotted !important;
+  outline: 5px auto -webkit-focus-ring-color !important;
+  outline-offset: -2px !important;
 }
 .moin-button:hover,
 .moin-button:focus,
 .moin-button.focus {
-  color: #212121;
-  text-decoration: none;
+  color: #212121 !important;
+  text-decoration: none !important;
 }
 .moin-button:active,
 .moin-button.active {
-  outline: 0;
-  background-image: none;
-  -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
-  box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  outline: 0 !important;
+  background-image: none !important;
+  -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125) !important;
+  box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125) !important;
 }
 .moin-button.disabled,
 .moin-button[disabled],
 fieldset[disabled] .moin-button {
-  cursor: not-allowed;
-  opacity: 0.65;
-  filter: alpha(opacity=65);
-  -webkit-box-shadow: none;
-  box-shadow: none;
+  cursor: not-allowed !important;
+  opacity: 0.65 !important;
+  filter: alpha(opacity=65) !important;
+  -webkit-box-shadow: none !important;
+  box-shadow: none !important;
 }
 a.moin-button.disabled,
 fieldset[disabled] a.moin-button {
-  pointer-events: none;
+  pointer-events: none !important;
 }
 .moin-button-link {
-  -webkit-box-shadow: none;
-  box-shadow: none;
+  -webkit-box-shadow: none !important;
+  box-shadow: none !important;
 }
 .moin-button-link:hover,
 .moin-button-link:focus {
-  color: #3f51b5;
-  text-decoration: none;
+  color: #3f51b5 !important;
+  text-decoration: none !important;
 }
 .moin-button-default.disabled {
-  border: 1px solid #eeeeee;
+  border: 1px solid #eeeeee !important;
 }
 .moin-button:focus,
 .moin-button.focus {
-  color: #ffffff;
-  background-color: #32408f;
-  border-color: rgba(0, 0, 0, 0);
+  color: #ffffff !important;
+  background-color: #32408f !important;
+  border-color: rgba(0, 0, 0, 0) !important;
 }
 .moin-button:hover {
-  color: #ffffff;
-  background-color: #32408f;
-  border-color: rgba(0, 0, 0, 0);
+  color: #ffffff !important;
+  background-color: #32408f !important;
+  border-color: rgba(0, 0, 0, 0) !important;
 }
 .moin-button:active,
 .moin-button.active,
 .open > .dropdown-toggle.moin-button {
-  color: #ffffff;
-  background-color: #32408f;
-  border-color: rgba(0, 0, 0, 0);
+  color: #ffffff !important;
+  background-color: #32408f !important;
+  border-color: rgba(0, 0, 0, 0) !important;
 }
 .moin-button:active:hover,
 .moin-button.active:hover,
@@ -5663,14 +5655,14 @@ fieldset[disabled] a.moin-button {
 .moin-button:active.focus,
 .moin-button.active.focus,
 .open > .dropdown-toggle.moin-button.focus {
-  color: #ffffff;
-  background-color: #293475;
-  border-color: rgba(0, 0, 0, 0);
+  color: #ffffff !important;
+  background-color: #293475 !important;
+  border-color: rgba(0, 0, 0, 0) !important;
 }
 .moin-button:active,
 .moin-button.active,
 .open > .dropdown-toggle.moin-button {
-  background-image: none;
+  background-image: none !important;
 }
 .moin-button.disabled,
 .moin-button[disabled],
@@ -5690,26 +5682,26 @@ fieldset[disabled] .moin-button:active,
 .moin-button.disabled.active,
 .moin-button[disabled].active,
 fieldset[disabled] .moin-button.active {
-  background-color: #3f51b5;
-  border-color: transparent;
+  background-color: #3f51b5 !important;
+  border-color: transparent !important;
 }
 .moin-button .badge {
-  color: #3f51b5;
-  background-color: #ffffff;
+  color: #3f51b5 !important;
+  background-color: #ffffff !important;
 }
 .moin-button:hover,
 .moin-button:active:hover,
 .moin-button:focus {
-  background-color: #37479e;
+  background-color: #37479e !important;
 }
 .moin-button:active {
-  background-color: #37479e;
-  background-image: -webkit-radial-gradient(circle, #37479e 10%, #3f51b5 11%);
-  background-image: radial-gradient(circle, #37479e 10%, #3f51b5 11%);
-  background-repeat: no-repeat;
-  background-size: 1000%;
-  -webkit-box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
-  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
+  background-color: #37479e !important;
+  background-image: -webkit-radial-gradient(circle, #37479e 10%, #3f51b5 11%) !important;
+  background-image: radial-gradient(circle, #37479e 10%, #3f51b5 11%) !important;
+  background-repeat: no-repeat !important;
+  background-size: 1000% !important;
+  -webkit-box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3) !important;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3) !important;
 }
 .moin-body {
   margin-left: -15px;

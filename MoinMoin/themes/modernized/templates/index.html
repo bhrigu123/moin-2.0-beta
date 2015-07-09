@@ -121,7 +121,7 @@
         {% if files or dirs %}
             <nav class="modernized-index-pagination">
               <ul class="pagination">
-              
+
               {% if not startswith %}
                 <li class="active"><a href="{{ url_for('frontend.index', item_name=item_name) }}">
                     <i class="fa fa-th"></i>
@@ -134,14 +134,13 @@
                 </a></li>
               {% endif %}
 
-              {% for initial in initials %}
-              {% if startswith == initial %}
-                <li class="active"><a href="{{ url_for('frontend.index', item_name=item_name, startswith=initial) }}">{{ initial }}</a></li>
-              {% else %}
-                  <li><a href="{{ url_for('frontend.index', item_name=item_name, startswith=initial) }}">{{ initial }}</a></li>
-              {% endif %}
-              {% endfor %}
-                
+                {% for initial in initials %}
+                  {% if startswith == initial %}
+                    <li class="active"><a href="{{ url_for('frontend.index', item_name=item_name, startswith=initial) }}">{{ initial }}</a></li>
+                  {% else %}
+                      <li><a href="{{ url_for('frontend.index', item_name=item_name, startswith=initial) }}">{{ initial }}</a></li>
+                  {% endif %}
+                {% endfor %}
               </ul>
             </nav>
 
