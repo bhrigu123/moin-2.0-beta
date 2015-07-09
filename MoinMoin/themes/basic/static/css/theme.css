@@ -7813,6 +7813,7 @@ body {
 }
 .moin-content {
   padding-bottom: 10%;
+  min-height: 620px;
 }
 .moin-search-option-bar {
   padding-left: 10px;
