@@ -4750,7 +4750,9 @@ button.list-group-item-danger.active:focus {
 .panel-body:before,
 .panel-body:after,
 .moin-itemviews:before,
-.moin-itemviews:after {
+.moin-itemviews:after,
+.moin-body:before,
+.moin-body:after {
   content: " ";
   display: table;
 }
@@ -4767,7 +4769,8 @@ button.list-group-item-danger.active:focus {
 .navbar-collapse:after,
 .pager:after,
 .panel-body:after,
-.moin-itemviews:after {
+.moin-itemviews:after,
+.moin-body:after {
   clear: both;
 }
 .center-block {
@@ -5549,6 +5552,169 @@ input[type=number].input-lg,
   height: 90px;
   background-color: #444EB6;
 }
+.footer a {
+  color: white;
+}
+.moin-button {
+  display: inline-block;
+  margin-bottom: 0;
+  font-weight: normal;
+  text-align: center;
+  vertical-align: middle;
+  touch-action: manipulation;
+  cursor: pointer;
+  background-image: none;
+  border: 1px solid transparent;
+  white-space: nowrap;
+  padding: 6px 16px;
+  font-size: 13px;
+  line-height: 1.846;
+  border-radius: 3px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  text-transform: uppercase;
+  border-right: none;
+  border-bottom: none;
+  -webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+  -webkit-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
+  color: #ffffff;
+  background-color: #3f51b5;
+  border-color: transparent;
+  background-size: 200%;
+  background-position: 50%;
+}
+.moin-button:focus,
+.moin-button:active:focus,
+.moin-button.active:focus,
+.moin-button.focus,
+.moin-button:active.focus,
+.moin-button.active.focus {
+  outline: thin dotted;
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
+}
+.moin-button:hover,
+.moin-button:focus,
+.moin-button.focus {
+  color: #212121;
+  text-decoration: none;
+}
+.moin-button:active,
+.moin-button.active {
+  outline: 0;
+  background-image: none;
+  -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+}
+.moin-button.disabled,
+.moin-button[disabled],
+fieldset[disabled] .moin-button {
+  cursor: not-allowed;
+  opacity: 0.65;
+  filter: alpha(opacity=65);
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+a.moin-button.disabled,
+fieldset[disabled] a.moin-button {
+  pointer-events: none;
+}
+.moin-button-link {
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+.moin-button-link:hover,
+.moin-button-link:focus {
+  color: #3f51b5;
+  text-decoration: none;
+}
+.moin-button-default.disabled {
+  border: 1px solid #eeeeee;
+}
+.moin-button:focus,
+.moin-button.focus {
+  color: #ffffff;
+  background-color: #32408f;
+  border-color: rgba(0, 0, 0, 0);
+}
+.moin-button:hover {
+  color: #ffffff;
+  background-color: #32408f;
+  border-color: rgba(0, 0, 0, 0);
+}
+.moin-button:active,
+.moin-button.active,
+.open > .dropdown-toggle.moin-button {
+  color: #ffffff;
+  background-color: #32408f;
+  border-color: rgba(0, 0, 0, 0);
+}
+.moin-button:active:hover,
+.moin-button.active:hover,
+.open > .dropdown-toggle.moin-button:hover,
+.moin-button:active:focus,
+.moin-button.active:focus,
+.open > .dropdown-toggle.moin-button:focus,
+.moin-button:active.focus,
+.moin-button.active.focus,
+.open > .dropdown-toggle.moin-button.focus {
+  color: #ffffff;
+  background-color: #293475;
+  border-color: rgba(0, 0, 0, 0);
+}
+.moin-button:active,
+.moin-button.active,
+.open > .dropdown-toggle.moin-button {
+  background-image: none;
+}
+.moin-button.disabled,
+.moin-button[disabled],
+fieldset[disabled] .moin-button,
+.moin-button.disabled:hover,
+.moin-button[disabled]:hover,
+fieldset[disabled] .moin-button:hover,
+.moin-button.disabled:focus,
+.moin-button[disabled]:focus,
+fieldset[disabled] .moin-button:focus,
+.moin-button.disabled.focus,
+.moin-button[disabled].focus,
+fieldset[disabled] .moin-button.focus,
+.moin-button.disabled:active,
+.moin-button[disabled]:active,
+fieldset[disabled] .moin-button:active,
+.moin-button.disabled.active,
+.moin-button[disabled].active,
+fieldset[disabled] .moin-button.active {
+  background-color: #3f51b5;
+  border-color: transparent;
+}
+.moin-button .badge {
+  color: #3f51b5;
+  background-color: #ffffff;
+}
+.moin-button:hover,
+.moin-button:active:hover,
+.moin-button:focus {
+  background-color: #37479e;
+}
+.moin-button:active {
+  background-color: #37479e;
+  background-image: -webkit-radial-gradient(circle, #37479e 10%, #3f51b5 11%);
+  background-image: radial-gradient(circle, #37479e 10%, #3f51b5 11%);
+  background-repeat: no-repeat;
+  background-size: 1000%;
+  -webkit-box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
+}
+.moin-body {
+  margin-left: -15px;
+  margin-right: -15px;
+}
 h1,
 h2,
 h3,
@@ -5556,4 +5722,27 @@ h4,
 h5,
 h6 {
   border-color: #3F51B5;
+}
+table {
+  margin: 0;
+}
+tr > th,
+tr > td {
+  padding: 0;
+  vertical-align: middle;
+  text-align: left;
+}
+thead > tr > td,
+tr > th {
+  border: 0 solid #4e7da9;
+  background-color: #81bbf2;
+  text-align: left;
+  color: #000;
+}
+tr > td {
+  border: 0 solid #4e7da9;
+}
+td p {
+  margin: 0;
+  padding: 0;
 }
