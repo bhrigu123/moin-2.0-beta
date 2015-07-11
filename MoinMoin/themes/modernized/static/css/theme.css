@@ -5359,6 +5359,9 @@ input[type=number].input-lg,
   padding-bottom: 5px !important;
   font-size: 14px;
 }
+.navbar {
+  margin-bottom: 0px;
+}
 .navbar-brand {
   height: 70px;
   padding-top: 10px;
@@ -5545,6 +5548,9 @@ input[type=number].input-lg,
   background-color: #444EB6;
 }
 .footer a {
+  color: white;
+}
+#moin-pageinfo {
   color: white;
 }
 .moin-button {
@@ -5744,4 +5750,137 @@ td p {
 }
 .moin-contenttypes-wrapper form input[type="submit"] {
   margin-top: -5%;
+}
+.moin-float-fix {
+  text-align: center ;
+}
+#moin-usersettings input[type="text"],
+input[type="email"],
+input[type="password"] {
+  display: block !important;
+  width: 100% !important;
+  height: 37px !important;
+  padding: 6px 16px !important;
+  font-size: 13px !important;
+  line-height: 1.846 !important;
+  color: #666666 !important;
+  background-color: transparent !important;
+  background-image: none !important;
+  border: 1px solid transparent !important;
+  border-radius: 3px !important;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075) !important;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075) !important;
+  -webkit-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s !important;
+  -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s !important;
+  transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s !important;
+}
+#moin-usersettings input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus {
+  border-color: #66afe9 !important;
+  outline: 0 !important;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6) !important;
+  box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6) !important;
+}
+#moin-usersettings input[type="text"]::-moz-placeholder,
+input[type="email"]::-moz-placeholder,
+input[type="password"]::-moz-placeholder {
+  color: #bbbbbb !important;
+  opacity: 1 !important;
+}
+#moin-usersettings input[type="text"]:-ms-input-placeholder,
+input[type="email"]:-ms-input-placeholder,
+input[type="password"]:-ms-input-placeholder {
+  color: #bbbbbb !important;
+}
+#moin-usersettings input[type="text"]::-webkit-input-placeholder,
+input[type="email"]::-webkit-input-placeholder,
+input[type="password"]::-webkit-input-placeholder {
+  color: #bbbbbb !important;
+}
+#moin-usersettings input[type="text"]::-ms-expand,
+input[type="email"]::-ms-expand,
+input[type="password"]::-ms-expand {
+  border: 0 !important;
+  background-color: transparent !important;
+}
+#moin-usersettings input[type="text"][disabled],
+input[type="email"][disabled],
+input[type="password"][disabled],
+#moin-usersettings input[type="text"][readonly],
+input[type="email"][readonly],
+input[type="password"][readonly],
+fieldset[disabled] #moin-usersettings input[type="text"],
+fieldset[disabled] input[type="email"],
+fieldset[disabled] input[type="password"] {
+  background-color: transparent !important;
+  opacity: 1 !important;
+}
+#moin-usersettings input[type="text"][disabled],
+input[type="email"][disabled],
+input[type="password"][disabled],
+fieldset[disabled] #moin-usersettings input[type="text"],
+fieldset[disabled] input[type="email"],
+fieldset[disabled] input[type="password"] {
+  cursor: not-allowed !important;
+}
+textarea#moin-usersettings input[type="text"],
+textareainput[type="email"],
+textareainput[type="password"] {
+  height: auto !important;
+}
+#f_usersettings_subscriptions_subscriptions {
+  display: block;
+  width: 100%;
+  height: 37px;
+  padding: 6px 16px;
+  font-size: 13px;
+  line-height: 1.846;
+  color: #666666;
+  background-color: transparent;
+  background-image: none;
+  border: 1px solid transparent;
+  border-radius: 3px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  -webkit-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+  -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+  transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+  height: 80px !important;
+}
+#f_usersettings_subscriptions_subscriptions:focus {
+  border-color: #66afe9;
+  outline: 0;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
+  box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
+}
+#f_usersettings_subscriptions_subscriptions::-moz-placeholder {
+  color: #bbbbbb;
+  opacity: 1;
+}
+#f_usersettings_subscriptions_subscriptions:-ms-input-placeholder {
+  color: #bbbbbb;
+}
+#f_usersettings_subscriptions_subscriptions::-webkit-input-placeholder {
+  color: #bbbbbb;
+}
+#f_usersettings_subscriptions_subscriptions::-ms-expand {
+  border: 0;
+  background-color: transparent;
+}
+#f_usersettings_subscriptions_subscriptions[disabled],
+#f_usersettings_subscriptions_subscriptions[readonly],
+fieldset[disabled] #f_usersettings_subscriptions_subscriptions {
+  background-color: transparent;
+  opacity: 1;
+}
+#f_usersettings_subscriptions_subscriptions[disabled],
+fieldset[disabled] #f_usersettings_subscriptions_subscriptions {
+  cursor: not-allowed;
+}
+textarea#f_usersettings_subscriptions_subscriptions {
+  height: auto;
+}
+.tip {
+  font-size: 13px ;
 }
