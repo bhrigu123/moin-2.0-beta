@@ -1,4 +1,4 @@
-/*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
+/*! normalize.css v3.0.0 | MIT License | git.io/normalize */
 html {
   font-family: sans-serif;
   -ms-text-size-adjust: 100%;
@@ -16,7 +16,6 @@ footer,
 header,
 hgroup,
 main,
-menu,
 nav,
 section,
 summary {
@@ -38,7 +37,7 @@ template {
   display: none;
 }
 a {
-  background-color: transparent;
+  background: transparent;
 }
 a:active,
 a:hover {
@@ -88,6 +87,7 @@ figure {
   margin: 1em 40px;
 }
 hr {
+  -moz-box-sizing: content-box;
   box-sizing: content-box;
   height: 0;
 }
@@ -147,6 +147,8 @@ input[type="number"]::-webkit-outer-spin-button {
 }
 input[type="search"] {
   -webkit-appearance: textfield;
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
   box-sizing: content-box;
 }
 input[type="search"]::-webkit-search-cancel-button,
