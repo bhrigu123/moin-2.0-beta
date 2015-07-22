@@ -46,7 +46,8 @@
                         <td class="moin-wordbreak moin-history-editorinfo">{{ utils.editor_info(rev.meta) }}</td>
                         <td class="moin-history-time">{{ meta.mtime|time_hh_mm }}</td>
                         <td class="moin-history-action">
-                            <span title="{{ _("Last action: ") + meta.action|title }}" class="{{ awesome_class[meta.action] }}"></span>
+                        <a href="{{ url_for('frontend.download_item', item_name=rev.fqname) }}">
+                            <span title="{{ _("Last action: " + meta.action|title) }}" class="{{ awesome_class[meta.action] }}"></span></a>
                         </td>
                         <td class="moin-history-links">
                             <a href="{{ url_for('frontend.history', item_name=rev.fqname, bookmark=bookmark_time) }}">
