@@ -33,7 +33,7 @@
 
 {% block local_panel %}
 
-    <div class="moin-list-heading">
+    <div class="moin-list-heading" style="border-radius: 4px 4px 0px 0px;">
         <div class="list-group-item-heading">
             {{ _("View Options") }}
             <a class="moin-showhide moin-viewoptions" href="#">
@@ -59,7 +59,7 @@
     </div>
 
     {% if user_actions %}
-        <div class="moin-list-heading">
+        <div class="moin-list-heading" style="border-radius: 0px 0px 0px 0px;">
             <div class="list-group-item-heading">
                 {{ _("User Actions") }}
                 <a class="moin-showhide moin-useractions" href="#" >
@@ -71,7 +71,7 @@
     {% endif %}
 
     {% if item_actions %}
-        <div class="moin-list-heading">
+        <div class="moin-list-heading" style="border-radius: 0px 0px 4px 4px;">
             <div class="list-group-item-heading">
                 {{ _("Item Actions") }}
                 <a class="moin-showhide moin-itemactions" href="#" >
