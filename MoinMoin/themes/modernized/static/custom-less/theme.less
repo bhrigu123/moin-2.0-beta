@@ -83,12 +83,10 @@ padding-left: 20px;
 }
 
 //Universal
-
 .moin-itemviews{
 .nav;
 .nav-tabs;
 }
-
 .breadcrumb a {
     color: white;
 }
@@ -130,30 +128,31 @@ padding-left: 10px;
     .btn !important;
     .btn-primary !important;
 }
-
+.moin-button-danger{
+    .btn !important;
+    .btn-danger !important;
+    margin-top: 4px;
+    margin-left: 3px;
+}
 .moin-body{
   .row;
   min-height: 620px;
 
 }
 
-
 // Overriding default settings in common.css
 h1,h2,h3,h4,h5,h6{
   border-color: #3F51B5;
 }
-
 table{
   margin: 0;
 }
-
 tr > th,
 tr > td { padding: 0; vertical-align: middle; text-align: left; }
 thead > tr > td,
 tr > th { border: 0 solid #4e7da9; background-color: #3F51B5; text-align: left; color: white; }
 tr > td { border: 0 solid #4e7da9; }
 td p { margin: 0; padding: 0; }
-
 
 .moin-tabs .moin-tab-titles a{ color: #00008b; }
 .moin-tab-titles{ margin: 0; padding: -10px 0 0; list-style: none; border-bottom: 3px solid #3F51B5; }
@@ -176,7 +175,6 @@ margin-top: -5%;
 .moin-float-fix{
 text-align: center ;
 }
-
 #f_usersettings_subscriptions_subscriptions{
   .form-control;
   border:1px solid #3F51B5;
@@ -189,6 +187,29 @@ text-align: center ;
 .container {
   background-color: white;
 }
+
 body{
   background-color: #E8EAF6;
+}
+.userbrowser-form input{
+    width: 170px;
+}
+.userbrowser{
+    padding-left: 24px;
+}
+.userbrowser-form{
+
+width: 180px;
+}
+
+.markItUp{
+  background-color: white !important;
+}
+
+#moin-usersettings form input[type="password"],
+#moin-usersettings form input[type="text"],
+#moin-usersettings form input[type="email"]
+{
+border: 1px solid rgba(63, 81, 181, 0.36);
+    padding-left: 7px;
 }
