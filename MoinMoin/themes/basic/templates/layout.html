@@ -88,7 +88,7 @@
                     {% endif %}
 
                     {% if navibar_items %}
-                        <div class="moin-list-heading">
+                        <div class="moin-list-heading" style="margin-bottom: 1px; ">
                             <div class="list-group-item-heading">{{ _("Site Navigation") }}</div>
                             {% for cls, url, text, title in navibar_items if cls != 'userlink' %}
                                 <a class="list-group-item {{ cls }}
@@ -98,11 +98,23 @@
                                 </a>
                             {% endfor %}
                         </div>
+                        {% if self.local_panel %}
+                            {{ self.local_panel() }}
+                        {% endif %}
                     {% endif %}
 
                     {% for cls, url, text, title in navibar_items if cls == 'userlink' %}
-                        {% if loop.first %}<div class="moin-list-heading">
+                        {% if loop.first %}<div class="moin-list-heading" style="margin-top: 1px;">
                             <div class="list-group-item-heading">{{ _("Quick Links") }}</div>
+                            <div class="input-group" style="height: 35px;">
+                                <input id="filter" autocomplete="off" style="height:31px;" name="q" type="text" class="form-control" placeholder="Search ...">
+                                <div class="input-group-btn">
+                                    <button class="btn btn-primary" style="height: 31px;margin-bottom: 3px;border-bottom-width: 0px;">
+                                        <i class="fa fa-search"></i>
+                                    </button>
+                                </div>
+                            </div>
+
                         {% endif %}
                         <div class="moin-quicklink">
                             <a class="moin-quicklink-label {{ cls }}" href="{{ url }}" {% if title %}title="{{ title }} : {{ url|safe }}"{% else %}"{{ url|safe }}"{% endif %}>{{ text|shorten_item_name(20) }}
@@ -111,9 +123,7 @@
                         {% if loop.last %}</div>{% endif %}
                     {% endfor %}
 
-                    {% if self.local_panel %}
-                        {{ self.local_panel() }}
-                    {% endif %}
+
                 </div> {# moin-sidebar-panels #}
             </div> {# moin-sidebar #}
 
@@ -191,7 +201,7 @@
                         {% for category, msg in get_flashed_messages(with_categories=true) %}
                             <div class="moin-flash moin-flash-{{ category }}">
                                 {{ msg }}
-                                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                                <button style="" type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
                             </div>
                         {% endfor %}
                     </div>
@@ -230,4 +240,22 @@
 {% block body_scripts %}
     {{ super() }}
     <script src="{{ url_for('static', filename='js/basic.js') }}"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            (function ($) {
+
+                $('#filter').keyup(function () {
+
+                    var rex = new RegExp($(this).val(), 'i');
+                    $('.moin-quicklink a').hide();
+                    $('.moin-quicklink a').filter(function () {
+                        return rex.test($(this).text());
+                    }).show();
+
+                })
+
+            }(jQuery));
+        });
+    </script>
 {% endblock %}
