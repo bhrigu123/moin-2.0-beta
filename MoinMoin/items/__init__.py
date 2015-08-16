@@ -895,6 +895,7 @@ class Default(Contentful):
                                form=form,
                                search_form=None,
                                help=help,
+                               meta=item._meta_info(),
                               )
 
     show_template = 'show.html'
