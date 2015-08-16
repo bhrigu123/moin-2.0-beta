@@ -16,4 +16,17 @@ $(document).ready(function () {
     $('#hideshowsidebar').click(function() {
         $('#moin-main-wrapper').toggleClass('showsidebar');
     });
+
+    (function ($) {
+        $('#filter').keyup(function () {
+
+            var rex = new RegExp($(this).val(), 'i');
+            $('.moin-quicklink a').hide();
+            $('.moin-quicklink a').filter(function () {
+                return rex.test($(this).text());
+            }).show();
+
+        })
+    }(jQuery));
+
 });
