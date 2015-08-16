@@ -5723,6 +5723,164 @@ fieldset[disabled] .moin-button.active {
   -webkit-box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3) !important;
   box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3) !important;
 }
+.moin-button-danger {
+  display: inline-block !important;
+  margin-bottom: 0 !important;
+  font-weight: normal !important;
+  text-align: center !important;
+  vertical-align: middle !important;
+  touch-action: manipulation !important;
+  cursor: pointer !important;
+  background-image: none !important;
+  border: 1px solid transparent !important;
+  white-space: nowrap !important;
+  padding: 6px 16px !important;
+  font-size: 13px !important;
+  line-height: 1.846 !important;
+  border-radius: 3px !important;
+  -webkit-user-select: none !important;
+  -moz-user-select: none !important;
+  -ms-user-select: none !important;
+  user-select: none !important;
+  text-transform: uppercase !important;
+  border-right: none !important;
+  border-bottom: none !important;
+  -webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3) !important;
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3) !important;
+  -webkit-transition: all 0.2s !important;
+  -o-transition: all 0.2s !important;
+  transition: all 0.2s !important;
+  color: #ffffff !important;
+  background-color: #e51c23 !important;
+  border-color: transparent !important;
+  background-size: 200% !important;
+  background-position: 50% !important;
+  margin-top: 4px;
+  margin-left: 3px;
+}
+.moin-button-danger:focus,
+.moin-button-danger:active:focus,
+.moin-button-danger.active:focus,
+.moin-button-danger.focus,
+.moin-button-danger:active.focus,
+.moin-button-danger.active.focus {
+  outline: thin dotted !important;
+  outline: 5px auto -webkit-focus-ring-color !important;
+  outline-offset: -2px !important;
+}
+.moin-button-danger:hover,
+.moin-button-danger:focus,
+.moin-button-danger.focus {
+  color: #212121 !important;
+  text-decoration: none !important;
+}
+.moin-button-danger:active,
+.moin-button-danger.active {
+  outline: 0 !important;
+  background-image: none !important;
+  -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125) !important;
+  box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125) !important;
+}
+.moin-button-danger.disabled,
+.moin-button-danger[disabled],
+fieldset[disabled] .moin-button-danger {
+  cursor: not-allowed !important;
+  opacity: 0.65 !important;
+  filter: alpha(opacity=65) !important;
+  -webkit-box-shadow: none !important;
+  box-shadow: none !important;
+}
+a.moin-button-danger.disabled,
+fieldset[disabled] a.moin-button-danger {
+  pointer-events: none !important;
+}
+.moin-button-danger-link {
+  -webkit-box-shadow: none !important;
+  box-shadow: none !important;
+}
+.moin-button-danger-link:hover,
+.moin-button-danger-link:focus {
+  color: #3f51b5 !important;
+  text-decoration: none !important;
+}
+.moin-button-danger-default.disabled {
+  border: 1px solid #eeeeee !important;
+}
+.moin-button-danger:focus,
+.moin-button-danger.focus {
+  color: #ffffff !important;
+  background-color: #b9151b !important;
+  border-color: rgba(0, 0, 0, 0) !important;
+}
+.moin-button-danger:hover {
+  color: #ffffff !important;
+  background-color: #b9151b !important;
+  border-color: rgba(0, 0, 0, 0) !important;
+}
+.moin-button-danger:active,
+.moin-button-danger.active,
+.open > .dropdown-toggle.moin-button-danger {
+  color: #ffffff !important;
+  background-color: #b9151b !important;
+  border-color: rgba(0, 0, 0, 0) !important;
+}
+.moin-button-danger:active:hover,
+.moin-button-danger.active:hover,
+.open > .dropdown-toggle.moin-button-danger:hover,
+.moin-button-danger:active:focus,
+.moin-button-danger.active:focus,
+.open > .dropdown-toggle.moin-button-danger:focus,
+.moin-button-danger:active.focus,
+.moin-button-danger.active.focus,
+.open > .dropdown-toggle.moin-button-danger.focus {
+  color: #ffffff !important;
+  background-color: #991216 !important;
+  border-color: rgba(0, 0, 0, 0) !important;
+}
+.moin-button-danger:active,
+.moin-button-danger.active,
+.open > .dropdown-toggle.moin-button-danger {
+  background-image: none !important;
+}
+.moin-button-danger.disabled,
+.moin-button-danger[disabled],
+fieldset[disabled] .moin-button-danger,
+.moin-button-danger.disabled:hover,
+.moin-button-danger[disabled]:hover,
+fieldset[disabled] .moin-button-danger:hover,
+.moin-button-danger.disabled:focus,
+.moin-button-danger[disabled]:focus,
+fieldset[disabled] .moin-button-danger:focus,
+.moin-button-danger.disabled.focus,
+.moin-button-danger[disabled].focus,
+fieldset[disabled] .moin-button-danger.focus,
+.moin-button-danger.disabled:active,
+.moin-button-danger[disabled]:active,
+fieldset[disabled] .moin-button-danger:active,
+.moin-button-danger.disabled.active,
+.moin-button-danger[disabled].active,
+fieldset[disabled] .moin-button-danger.active {
+  background-color: #e51c23 !important;
+  border-color: transparent !important;
+}
+.moin-button-danger .badge {
+  color: #e51c23 !important;
+  background-color: #ffffff !important;
+}
+.moin-button-danger:hover,
+.moin-button-danger:active:hover,
+.moin-button-danger:focus {
+  background-color: #cb171e !important;
+}
+.moin-button-danger:active {
+  background-color: #cb171e !important;
+  background-image: -webkit-radial-gradient(circle, #cb171e 10%, #e51c23 11%) !important;
+  background-image: radial-gradient(circle, #cb171e 10%, #e51c23 11%) !important;
+  background-repeat: no-repeat !important;
+  background-size: 1000% !important;
+  -webkit-box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3) !important;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3) !important;
+}
 .moin-body {
   margin-left: -15px;
   margin-right: -15px;
@@ -5872,4 +6030,42 @@ textarea#f_usersettings_subscriptions_subscriptions {
 }
 body {
   background-color: #E8EAF6;
+}
+.userbrowser-form input {
+  width: 170px;
+}
+.userbrowser {
+  padding-left: 24px;
+}
+.userbrowser-form {
+  width: 180px;
+}
+.markItUp {
+  background-color: white !important;
+}
+#moin-usersettings form input[type="password"],
+#moin-usersettings form input[type="text"],
+#moin-usersettings form input[type="email"] {
+  border: 1px solid rgba(63, 81, 181, 0.36);
+  padding-left: 7px;
+}
+.markItUpEditor {
+  width: 165% !important;
+}
+.markItUp {
+  width: 94% !important;
+  margin-left: 35px !important;
+}
+#f_content_form_data_text {
+  padding-top: 10px !important;
+  margin-left: 33px !important;
+}
+.editor-downloader {
+  float: right;
+  margin-right: 50px;
+  margin-top: 1%;
+  margin-left: 2%;
+}
+.moin-editor {
+  left: 1.1%;
 }
