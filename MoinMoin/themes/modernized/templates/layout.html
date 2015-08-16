@@ -84,22 +84,37 @@
   </nav>
 
   <!-- Sub menu navigation tabs-->
-  <div class="submenu">
+  <div class="submenu row">
       {% set navibar_items = theme_supp.navibar(fqname) %}
       {% if navibar_items %}
-          <ul class="nav nav-tabs moin-panel">
-              {% for cls, url, text, title in navibar_items %}
+        <div class="col-md-6" >
+            <ul class="nav nav-tabs moin-panel" >
+                {% for cls, url, text, title in navibar_items if cls != 'userlink' %}
+                    <li>
+                        <a href="{{ url }}" >
+                            {{ text }}
+                        </a>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="col-md-6" >
+          <div class="nav-collapse">
+            <ul class="nav nav-tabs" id="quicklinks">
+              {% for cls, url, text, title in navibar_items if cls == 'userlink' %}
                   <li>
                       <a href="{{ url }}" >
                           {{ text }}
                       </a>
                   </li>
               {% endfor %}
-          </ul>
+            </ul>
+          </div>
+        </div>
       {% endif %}
   </div>
   <!-- Item Views -->
-  <div class="itemviews" >
+  <div class="itemviews">
       {% block header_itemviews %}{% endblock %}
   </div>
 
@@ -132,4 +147,17 @@
           {% endblock %}
     </footer>
   </div>
+
+ <script src="{{ url_for('serve.files', name='jquery', filename='jquery.min.js') }}"></script>
+ <script>
+ $( document ).ready(function() {
+  $("#quicklinks").overflowNavs({
+      "more" : "More",
+      "parent" : ".nav-collapse",
+      "override_width" : true
+  });
+  });
+  </script>
 {% endblock %}
+
+
