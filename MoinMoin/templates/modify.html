@@ -1,5 +1,5 @@
 {% import "forms.html" as forms %}
-{% import "utils.html" as utils %}
+{% import "utils.html" as utils with context %}
 {% extends theme("show.html") %}
 
 {% from form.meta_template import meta_editor %}
@@ -17,6 +17,21 @@
     {% if extra_head %}
         {{ extra_head() }}
     {% endif %}
+
+    <link media="all" rel="stylesheet" href="{{ theme_static('css/markitup/skins/markitup/style.css') }}" />
+    <link media="all" rel="stylesheet" href="{{ theme_static('css/markitup/sets/markdown/style.css') }}" />
+
+    {% if meta['contenttype']|shorten_ctype   == 'Wiki (Moinmoin)' %}
+        <script src="{{ url_for('static', filename='js/wiki_moinmoin/set.js') }}"></script>
+    {% elif meta['contenttype']|shorten_ctype == 'Markdown' %}
+        <script src="{{ url_for('static', filename='js/markdown/set.js') }}"></script>
+    {% elif meta['contenttype']|shorten_ctype == 'Wiki (Creole)' %}
+        <script src="{{ url_for('static', filename='js/wiki_creole/set.js') }}"></script>
+    {% elif meta['contenttype']|shorten_ctype == 'Wiki (MediaWiki)' %}
+        <script src="{{ url_for('static', filename='js/wiki_mediawiki/set.js') }}"></script>
+
+    {% endif %}
+
 {% endblock %}
 
 {% block subitem_navigation %}
@@ -31,7 +46,7 @@
 {% block content %}
     <h1>{{ title }}</h1>
     <div id="moin-modify" class="moin-form">
-        <a class="btn btn-success" style="float: right" href="{{ url_for('.download_item', item_name=item_name, mimetype='application/x.moin.download') }}">
+        <a class="btn btn-success editor-downloader" href="{{ url_for('.download_item', item_name=item_name, mimetype='application/x.moin.download') }}">
             <span class="fa fa-download"></span> {{ _('Download') }}
         </a>
         {{ gen.form.open(form, method='post', enctype='multipart/form-data') }}
@@ -41,14 +56,16 @@
                For *Draw content, hide submit button and form['comment'], since *Draw
                POSTs originate from their respective applets.
             #}
-            {% if not form['content_form'].is_draw %}
-                {{ forms.render_submit(form, id='moin-save-text-button') }}
+            <div class="moin-editor">
+                {{ data_editor(form['content_form'], item_name,class="markItUp ") }}
+            </div>
+                {% if not form['content_form'].is_draw %}
+                    {{ forms.render_submit(form, id='moin-save-text-button') }}
                 <dl>
                     {{ forms.render_textcha(gen, form) }}
                     {{ forms.render(form['comment']) }}
                 </dl>
             {% endif %}
-            {{ data_editor(form['content_form'], item_name) }}
             {{ utils.help_on_editing(help) }}
             {% set may_admin = user.may.admin(fqname) %}
             {{ meta_editor(form['meta_form'], may_admin) }}
@@ -65,6 +82,14 @@
 {% endblock %}
 
 {% block options_for_javascript %}
+    <script src="{{ url_for('serve.files', name='jquery', filename='jquery.min.js') }}"></script>
+    <script type="text/javascript" >
+       $(document).ready(function() {
+        $('.markItUp').markItUp(myMarkdownSettings);
+       });
+       $('.moin-float-fix').children()[0].value="Save";
+       $('.moin-float-fix').css("margin-top","-3%");
+    </script>
     {%- if user.scroll_page_after_edit -%}
         <br id="moin-scroll-page-after-edit" />
     {%- endif %}
