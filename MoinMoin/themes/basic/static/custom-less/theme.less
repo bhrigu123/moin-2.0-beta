@@ -120,7 +120,7 @@ a:focus.moin-showhide {
   border: 1px solid @navbar-bg;
   font-variant: small-caps;
   color: @search_option_bar_text_color;
-  border-radius: 4px;
+  border-radius: 4px 4px 0px 0px;
   > a {
     color: @search_option_bar_text_color;
   }
@@ -320,7 +320,7 @@ ul.moin-breadcrumb li:hover ul.moin-alias{
   display: block;
 }
 .moin-thead{
-    background-color: silver;
+  background-color: silver;
 }
 html, body {
   height: 100%;
@@ -450,24 +450,34 @@ img {
     margin-top: 4px;
   }
 }
-.moin-button-danger { background: #aed4fa; border: 1px solid #00417F; border-radius: 6px; cursor: pointer;
-    font-size: 0.75em; font-weight: bold; padding: 4px 15px; margin: .3em; }
-
+.moin-button-danger {
+  background: #aed4fa;
+  border: 1px solid #00417F;
+  border-radius: 6px; cursor: pointer;
+  font-size: 0.75em;
+  font-weight: bold; padding: 4px 15px;
+  margin: .3em;
+}
 .userbrowser-form input{
-
-
-    width: 120px;
-
-
+  width: 120px;
 }
 .userbrowser{
+  padding-left: 0px;
+  width: 395px;
+  margin-left: 48px;
+}
 
-    padding-left: 0px;
-
-    width: 395px;
-
-    margin-left: 48px;
-
-
-
+/* Site navigation box*/
+.view-options{
+  border-radius: 4px 4px 0px 0px;
+}
+.user-actions{
+  border-radius: 0px 0px 0px 0px;
+}
+.item-actions{
+  border-radius: 0px 0px 4px 4px;
+}
+.quicklinks-box{
+  height:150px;
+  overflow-y:scroll;
 }
