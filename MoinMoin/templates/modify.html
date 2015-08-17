@@ -18,17 +18,18 @@
         {{ extra_head() }}
     {% endif %}
 
-    <link media="all" rel="stylesheet" href="{{ theme_static('css/markitup/skins/markitup/style.css') }}" />
-    <link media="all" rel="stylesheet" href="{{ theme_static('css/markitup/sets/markdown/style.css') }}" />
+    <link media="all" rel="stylesheet" href="{{ url_for('serve.files', name='markitup', filename='skins/markitup/style.css') }}" />
+    <link media="all" rel="stylesheet" href="{{ url_for('serve.files', name='markitup', filename='sets/markdown/style.css') }}" />
+
 
     {% if meta['contenttype']|shorten_ctype   == 'Wiki (Moinmoin)' %}
-        <script src="{{ url_for('static', filename='js/wiki_moinmoin/set.js') }}"></script>
+    <script src="{{ url_for('serve.files', name='markitup', filename='js/wiki_moinmoin/set.js') }}"></script>
     {% elif meta['contenttype']|shorten_ctype == 'Markdown' %}
-        <script src="{{ url_for('static', filename='js/markdown/set.js') }}"></script>
+    <script src="{{ url_for('serve.files', name='markitup', filename='js/markdown/set.js') }}"></script>
     {% elif meta['contenttype']|shorten_ctype == 'Wiki (Creole)' %}
-        <script src="{{ url_for('static', filename='js/wiki_creole/set.js') }}"></script>
+    <script src="{{ url_for('serve.files', name='markitup', filename='js/wiki_creole/set.js') }}"></script>
     {% elif meta['contenttype']|shorten_ctype == 'Wiki (MediaWiki)' %}
-        <script src="{{ url_for('static', filename='js/wiki_mediawiki/set.js') }}"></script>
+    <script src="{{ url_for('serve.files', name='markitup', filename='js/wiki_mediawiki/set.js') }}"></script>
 
     {% endif %}
 
