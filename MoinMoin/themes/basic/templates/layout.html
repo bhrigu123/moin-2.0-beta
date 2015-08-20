@@ -86,9 +86,8 @@
                     {% if search_form %}
                         {{ make_search_form("hidden-lg hidden-md hidden-sm", "moin-sidebar-form") }}
                     {% endif %}
-
                     {% if navibar_items %}
-                        <div class="moin-list-heading" style="margin-bottom: 1px; ">
+                        <div class="moin-list-heading site-navigation">
                             <div class="list-group-item-heading">{{ _("Site Navigation") }}</div>
                             {% for cls, url, text, title in navibar_items if cls != 'userlink' %}
                                 <a class="list-group-item {{ cls }}
@@ -123,8 +122,6 @@
                         </div>
                         {% if loop.last %}</div></div>{% endif %}
                     {% endfor %}
-
-
                 </div> {# moin-sidebar-panels #}
             </div> {# moin-sidebar #}
 
