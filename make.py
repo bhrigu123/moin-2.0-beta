@@ -368,14 +368,6 @@ class Commands(object):
         modernized_loc = 'MoinMoin/themes/modernized/static/custom-less'
         basic_loc = 'MoinMoin/themes/basic/static/custom-less'
 
-        print 'Running lessc to create normalize.css for modernized theme...'
-        command = 'lessc {0}/normalize.less > {1}/normalize.css'.format(bootstrap_loc, modernized_loc)
-        result = subprocess.call(command, shell=True)
-        if result == 0:
-            print 'Success: normalize.css created for modernized theme.'
-        else:
-            print 'Error: creation of normalize.css failed, see error messages above.'
-
         print 'Running lessc to update Basic theme CSS files...'
         if WINDOWS_OS:
             data_loc = '{0};{1}'.format(bootstrap_loc, pygments_loc)
