@@ -150,14 +150,12 @@
 
  <script src="{{ url_for('serve.files', name='jquery', filename='jquery.min.js') }}"></script>
  <script>
- $( document ).ready(function() {
-  $("#quicklinks").overflowNavs({
-      "more" : "More",
-      "parent" : ".nav-collapse",
-      "override_width" : true
-  });
-  });
+    $( document ).ready(function() {
+        $("#quicklinks").overflowNavs({
+          "more" : "More",
+          "parent" : ".nav-collapse",
+          "override_width" : true
+        });
+    });
   </script>
 {% endblock %}
-
-
