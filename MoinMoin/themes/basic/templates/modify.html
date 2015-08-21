@@ -1,6 +1,6 @@
 {% extends theme("layout.html") %}
 {% import "forms.html" as forms %}
-{% import "utils.html" as utils %}
+{% import "utils.html" as utils with context %}
 {% from theme(form.meta_template) import basic_meta_editor %}
 {% import theme("itemviews.html") as itemviews with context %}
 {% import theme(form['content_form'].template) as content_template %}
@@ -24,7 +24,19 @@
 {% endblock %}
 
 {% block content %}
-    <h1>{{ title }}</h1>
+  <link media="all" rel="stylesheet" href="{{ url_for('serve.files', name='markitup', filename='skins/markitup/style.css') }}" />
+  <link media="all" rel="stylesheet" href="{{ url_for('serve.files', name='markitup', filename='sets/markdown/style.css') }}" />
+  <link media="all" rel="stylesheet" href="{{ url_for('serve.files', name='bootstraptagsinput', filename='bootstrap-tagsinput.css') }}" />
+{% if meta['contenttype']|shorten_ctype   == 'Wiki (Moinmoin)' %}
+        <script src="{{ url_for('serve.files', name='markitup', filename='js/wiki_moinmoin/set.js') }}"></script>
+    {% elif meta['contenttype']|shorten_ctype == 'Markdown' %}
+        <script src="{{ url_for('serve.files', name='markitup', filename='js/markdown/set.js') }}"></script>
+    {% elif meta['contenttype']|shorten_ctype == 'Wiki (Creole)' %}
+        <script src="{{ url_for('serve.files', name='markitup', filename='js/wiki_creole/set.js') }}"></script>
+    {% elif meta['contenttype']|shorten_ctype == 'Wiki (MediaWiki)' %}
+        <script src="{{ url_for('serve.files', name='markitup', filename='js/wiki_mediawiki/set.js') }}"></script>
+{% endif %}
+<h1>{{ title }}</h1>
     <div id="moin-modify" class="moin-form">
         <a class="btn btn-success" style="float: right" href="{{ url_for('.download_item', item_name=item_name, mimetype='application/x.moin.download') }}">
             <span class="fa fa-download"></span> {{ _('Download') }}
@@ -47,7 +59,7 @@
             </ul>
             <div class="tab-content">
                 <div class="tab-pane active" id="editor">
-                    {{ data_editor(form['content_form'], item_name) }}
+                    {{ data_editor(form['content_form'], item_name, class="markItUp ") }}
                 </div>
                 <div class="tab-pane active" id="meta">
                     <div class="row">
@@ -104,6 +116,17 @@
 {% endblock %}
 
 {% block options_for_javascript %}
+<script src="{{ url_for('serve.files', name='jquery', filename='jquery.min.js') }}"></script>
+<script src="{{ url_for('serve.files', name='bootstraptagsinput', filename='bootstrap-tagsinput.js') }}"></script>
+
+    <script type="text/javascript" >
+       $(document).ready(function() {
+        $('.markItUp').markItUp(myMarkdownSettings);
+        $('#f_meta_form_tags').tagsinput();
+       });
+       $('.moin-float-fix').children()[0].value="Save";
+       $('.moin-float-fix').css("margin-top","-1%");
+    </script>
     {%- if user.scroll_page_after_edit -%}
         <br id="moin-scroll-page-after-edit" />
     {%- endif %}
