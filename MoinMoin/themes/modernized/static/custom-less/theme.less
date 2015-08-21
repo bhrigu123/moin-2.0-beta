@@ -223,6 +223,7 @@ body{
   width: 90% !important;
 }
 #moin-content {
+  min-height: 600px;
   padding-bottom: 10%;
 }
 .moin-editor-tabs{
@@ -245,4 +246,35 @@ html {
 }
 body {
   margin-bottom: 60px;
+}
+.moin-flash {
+  .alert;
+  &>a {
+    .alert .alert-link;
+  }
+}
+
+.moin-flash-hint {
+  &>a {
+    .alert-success .alert-link;
+  }
+  .alert-success;
+}
+
+.moin-flash-info {
+  &>a {
+    .alert-info .alert-link;
+  }
+  .alert-info;
+}
+
+.moin-flash-warning, .moin-flash-error, .moin-error {
+  &>a {
+    .alert-danger .alert-link;
+  }
+  &>li {
+    list-style-type: none;
+  }
+  .alert-danger;
+  padding-left: 0px;
 }

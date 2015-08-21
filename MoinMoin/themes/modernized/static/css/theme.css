@@ -6063,6 +6063,7 @@ body {
   width: 90% !important;
 }
 #moin-content {
+  min-height: 600px;
   padding-bottom: 10%;
 }
 .moin-editor-tabs {
@@ -6084,4 +6085,83 @@ html {
 }
 body {
   margin-bottom: 60px;
+}
+.moin-flash {
+  padding: 15px;
+  margin-bottom: 23px;
+  border: 1px solid transparent;
+  border-radius: 3px;
+}
+.moin-flash h4 {
+  margin-top: 0;
+  color: inherit;
+}
+.moin-flash .alert-link {
+  font-weight: bold;
+}
+.moin-flash > p,
+.moin-flash > ul {
+  margin-bottom: 0;
+}
+.moin-flash > p + p {
+  margin-top: 5px;
+}
+.moin-flash > a {
+  font-weight: bold;
+}
+.moin-flash-hint {
+  background-color: #dff0d8;
+  border-color: #d6e9c6;
+  color: #5c6bc0;
+}
+.moin-flash-hint > a {
+  color: #4150a8;
+}
+.moin-flash-hint hr {
+  border-top-color: #c9e2b3;
+}
+.moin-flash-hint .alert-link {
+  color: #4150a8;
+}
+.moin-flash-info {
+  background-color: #e1bee7;
+  border-color: #cba4dd;
+  color: #9c27b0;
+}
+.moin-flash-info > a {
+  color: #771e86;
+}
+.moin-flash-info hr {
+  border-top-color: #c191d6;
+}
+.moin-flash-info .alert-link {
+  color: #771e86;
+}
+.moin-flash-warning,
+.moin-flash-error,
+.moin-error {
+  background-color: #f9bdbb;
+  border-color: #f7a4af;
+  color: #e51c23;
+  padding-left: 0px;
+}
+.moin-flash-warning > a,
+.moin-flash-error > a,
+.moin-error > a {
+  color: #b9151b;
+}
+.moin-flash-warning > li,
+.moin-flash-error > li,
+.moin-error > li {
+  list-style-type: none;
+}
+.moin-flash-warning hr,
+.moin-flash-error hr,
+.moin-error hr {
+  border-top-color: #f58c9a;
+}
+.moin-flash-warning .alert-link,
+.moin-flash-error .alert-link,
+.moin-error .alert-link {
+  color: #b9151b;
 }
