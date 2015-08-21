@@ -69,8 +69,8 @@
         {{ data_editor(form['content_form'], item_name) }}
     {% else %}
         {{ data_editor(form['content_form'], item_name, class="markItUp") }}
-     {% endif %}   
-        
+     {% endif %}
+
     </div>
     <div role="tabpanel" class="tab-pane" id="meta">
         <div class="row moin-editor-tabs">
@@ -89,33 +89,31 @@
     </div>
     {% set field = form['meta_form']['acl'] %}
     {% if user.may.admin(fqname) %}
-    <div  role="tabpanel" class="tab-pane" id="acl">
-        <div class="row moin-editor-tabs">
-            <div class="col-md-6">
-                <div class="form-group">
-                    {{ gen.label(field) }}
-                    {{ gen.textarea(field, rows='1', class='form-control') }}
+        <div  role="tabpanel" class="tab-pane" id="acl">
+            <div class="row moin-editor-tabs">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        {{ gen.label(field) }}
+                        {{ gen.textarea(field, rows='1', class='form-control') }}
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
     {% else %}
         {{ gen.input(field, type='hidden', class='form-control') }}
     {% endif %}
-    <div role="tabpanel" class="tab-pane " id="help">
-    <div class="row moin-editor-tabs">
-        {{ utils.help_on_editing(help) }}
+        <div role="tabpanel" class="tab-pane " id="help">
+            <div class="row moin-editor-tabs">
+                {{ utils.help_on_editing(help) }}
+            </div>
+        </div>
     </div>
-    </div>
-
-
-</div>
-            {#
-            {{ gen.textarea(form['meta_text'], lang='en', dir='ltr', rows=rows_meta, cols=cols) }}
-            <br />
-            {{ forms.render_errors(form['meta_text']) }}
-            #}
-            {% if not form['content_form'].is_draw %}
+    {#
+    {{ gen.textarea(form['meta_text'], lang='en', dir='ltr', rows=rows_meta, cols=cols) }}
+    <br />
+    {{ forms.render_errors(form['meta_text']) }}
+    #}
+        {% if not form['content_form'].is_draw %}
             <div class="col-xs-4 center-block" style="float:none;">
                 {{ forms.render_textcha(gen, form) }}
                 {{ gen.input(form['comment'], type="text", class="form-control") }}
@@ -129,14 +127,10 @@
         {{ gen.form.close() }}
     </div>
 {% endblock %}
-
 {% block body_scripts %}
- {{ super() }}
+    {{ super() }}
  {% endblock %}
  {% block options_for_javascript %}
-
-<script src="{{ url_for('serve.files', name='bootstraptagsinput', filename='bootstrap-tagsinput.js') }}"></script>
-
     <script type="text/javascript" >
        $(document).ready(function() {
         $('.markItUp').markItUp(myMarkdownSettings);
