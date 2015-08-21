@@ -7970,3 +7970,16 @@ img {
 .bootstrap-tagsinput {
   display: block !important;
 }
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  margin-bottom: 60px;
+}
+.moin-footer {
+  bottom: 0;
+  width: 100%;
+  position: absolute;
+  padding-right: 3%;
+}
