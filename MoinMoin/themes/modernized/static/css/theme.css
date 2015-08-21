@@ -6049,23 +6049,29 @@ body {
   border: 1px solid rgba(63, 81, 181, 0.36);
   padding-left: 7px;
 }
-.markItUpEditor {
-  width: 165% !important;
-}
-.markItUp {
-  width: 94% !important;
-  margin-left: 35px !important;
-}
 #f_content_form_data_text {
-  padding-top: 10px !important;
-  margin-left: 33px !important;
+  width: 100% !important;
+  height: 773px !important;
 }
-.editor-downloader {
-  float: right;
-  margin-right: 50px;
-  margin-top: 1%;
-  margin-left: 2%;
+.markItUpContainer {
+  width: 100%!important;
 }
-.moin-editor {
-  left: 1.1%;
+#markItUpF_content_form_data_text {
+  width: 100% !important;
+}
+.markItUpHeader {
+  width: 1080px ;
+}
+#moin-content {
+  padding-bottom: 10%;
+  min-height: 600px !important;
+}
+.moin-editor-tabs {
+  padding-top: 25px;
+}
+#moin-modify form textarea {
+  border: 1px solid rgba(63, 81, 181, 0.36);
+}
+.bootstrap-tagsinput {
+  display: block !important;
 }
