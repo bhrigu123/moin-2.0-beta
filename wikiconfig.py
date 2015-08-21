@@ -119,6 +119,7 @@ class Config(DefaultConfig):
         'jquery_tablesorter',
         'pygments',
         'markitup',
+        'bootstraptagsinput'
     ]
     pkg = __import__('xstatic.pkg', fromlist=mod_names)
     for mod_name in mod_names:

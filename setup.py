@@ -110,6 +110,8 @@ setup_args = dict(
         'XStatic-JQuery.TableSorter>=2.14.5.1',
         'XStatic-Pygments>=1.6.0.1',
         'Xstatic-MarkitUp==1.1.14.1',
+        'Xstatic-BootstrapTagsInput==0.5.1',
+
     ],
     # optional features and their list of requirements
     extras_require={
