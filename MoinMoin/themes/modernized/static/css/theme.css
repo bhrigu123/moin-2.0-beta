@@ -6075,3 +6075,7 @@ body {
 .bootstrap-tagsinput {
   display: block !important;
 }
+#editor > dl {
+  position: relative;
+  left: 59%;
+}
