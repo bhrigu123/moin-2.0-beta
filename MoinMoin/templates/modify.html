@@ -50,8 +50,6 @@
                POSTs originate from their respective applets.
             #}
 
-            <div>
-
   <!-- Nav tabs -->
   <ul class="nav nav-tabs" role="tablist">
     <li class="active"><a href="#editor" data-toggle="tab">Edit Content</a></li>
@@ -125,11 +123,9 @@
             {% endif %}
 
         {{ gen.form.close() }}
-    </div>
+        </div>
 {% endblock %}
-{% block body_scripts %}
-    {{ super() }}
- {% endblock %}
+
  {% block options_for_javascript %}
     <script type="text/javascript" >
        $(document).ready(function() {
