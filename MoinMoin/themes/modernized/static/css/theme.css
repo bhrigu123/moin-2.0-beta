@@ -5360,8 +5360,8 @@ input[type=number].input-lg,
   font-size: 14px;
 }
 .moin-top-nav {
-  left: -12px;
-  width: 102%;
+  left: -16px;
+  width: 102.5%;
 }
 .navbar {
   margin-bottom: 0px;
@@ -5547,13 +5547,11 @@ input[type=number].input-lg,
 }
 .footer {
   bottom: 0;
-  width: 100%;
   height: 90px;
   background-color: #444EB6;
   padding-top: 10px;
   padding-right: 10px;
-  left: -12px;
-  width: 102%;
+  width: 100%;
   position: absolute;
 }
 .footer a {
@@ -5885,6 +5883,7 @@ fieldset[disabled] .moin-button-danger.active {
   margin-left: -15px;
   margin-right: -15px;
   min-height: 100%;
+  position: relative;
 }
 h1,
 h2,
@@ -6082,9 +6081,6 @@ body {
 html {
   position: relative;
   min-height: 100%;
-}
-body {
-  margin-bottom: 60px;
 }
 .moin-flash {
   padding: 15px;

@@ -119,33 +119,33 @@
   </div>
 
   <!-- Wiki Body -->
-  <div class="moin-body container">
-          {% block item -%}
-              {# If you want itemviews in your template, extend from show.html, not from here. #}
-              <div id="moin-content">
-                  <div id="moin-flash">
-                      {# client side javascript may add messages here #}
-                      {% for category, msg in get_flashed_messages(with_categories=true) %}
-                          <p class="moin-flash moin-flash-{{ category }}">
-                              {{ msg }}
-                          </p>
-                      {% endfor %}
-                  </div>
-                  {% block content %}
-                      {# All content templates should have implement this block. #}
-                  {% endblock %}
-              </div>
-          {%- endblock %}
-  </div>
-  <!-- Footer -->
-    <footer class="footer">
-          {% block footer %}
-            {% block footer_meta %}{% endblock %}
-            {{ creditlogos }}
-            {{ credits }}
-            {{ license_info }}
-          {% endblock %}
-    </footer>
+    <div class="moin-body">
+            {% block item -%}
+                {# If you want itemviews in your template, extend from show.html, not from here. #}
+                <div class="container" id="moin-content">
+                    <div id="moin-flash">
+                        {# client side javascript may add messages here #}
+                        {% for category, msg in get_flashed_messages(with_categories=true) %}
+                            <p class="moin-flash moin-flash-{{ category }}">
+                                {{ msg }}
+                            </p>
+                        {% endfor %}
+                    </div>
+                    {% block content %}
+                        {# All content templates should have implement this block. #}
+                    {% endblock %}
+                </div>
+            {%- endblock %}
+              <!-- Footer -->
+            <footer class="footer">
+            {% block footer %}
+              {% block footer_meta %}{% endblock %}
+              {{ creditlogos }}
+              {{ credits }}
+              {{ license_info }}
+            {% endblock %}
+           </footer>
+    </div>
   </div>
 
  <script src="{{ url_for('serve.files', name='jquery', filename='jquery.min.js') }}"></script>
