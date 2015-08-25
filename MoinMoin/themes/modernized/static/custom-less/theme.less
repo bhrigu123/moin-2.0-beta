@@ -122,8 +122,8 @@
   color:white;
 }
 .moin-button{
-  .btn !important;
-  .btn-primary !important;
+  .btn ;
+  .btn-primary;
 }
 .moin-button-danger{
   .btn !important;
@@ -207,6 +207,9 @@ body{
 #moin-usersettings form input[type="email"]{
   border: 1px solid rgba(63, 81, 181, 0.36);
   padding-left: 7px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
 }
 #f_content_form_data_text{
   width: 100% !important;
@@ -236,9 +239,14 @@ body{
 .bootstrap-tagsinput{
   display:block !important;
 }
-#editor > dl{
+#editor > :first-child{
   position: relative;
-  left: 59%;
+  margin-bottom: 0px !important;
+  padding-left: 9px !important;
+  height: 23px;
+}
+#editor > :first-child >:first-child{
+  width: 8% !important;
 }
 html {
   position: relative;
@@ -275,4 +283,24 @@ html {
   }
   .alert-danger;
   padding-left: 0px;
+}
+#moin-flash  p,.moin-error  li{
+  padding-left: 8px;
+}
+.moin-error{
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+.moin-button:active{
+  color:white !important;
+}
+.moin-filter-toggle{
+  color: white !important;
+}
+.moin-button:hover,
+.moin-button:focus { box-shadow: none !important;  }
+.moin-contenttypes-wrapper > form{
+  margin-top: 4px;
 }
