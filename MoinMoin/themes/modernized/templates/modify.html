@@ -111,19 +111,18 @@
     <br />
     {{ forms.render_errors(form['meta_text']) }}
     #}
-        {% if not form['content_form'].is_draw %}
-            <div class="col-xs-4 center-block" style="float:none;">
-                {{ forms.render_textcha(gen, form) }}
-                {{ gen.input(form['comment'], type="text", class="form-control") }}
-            </div>
-
+            {% if not form['content_form'].is_draw %}
+                <div class="col-xs-4 center-block" style="float:none;">
+                    {{ forms.render_textcha(gen, form) }}
+                    {{ gen.input(form['comment'], type="text", class="form-control") }}
+                </div>
                 <div class="form-group">
                     {{ forms.render_submit(form, value='Save', class='btn btn-primary', id='moin-save-text-button') }}
                 </div>
             {% endif %}
 
         {{ gen.form.close() }}
-        </div>
+    </div>
 {% endblock %}
 
  {% block options_for_javascript %}
