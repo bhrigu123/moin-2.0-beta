@@ -5304,7 +5304,7 @@ a.list-group-item:focus,
 button.list-group-item:focus {
   text-decoration: none;
   color: #555555;
-  background-color: #337ab7;
+  background-color: #f5f5f5;
 }
 button.list-group-item {
   width: 100%;
@@ -7291,8 +7291,8 @@ h6:focus .moin-permalink {
   background-color: #ffffff;
   text-align: left;
   padding: 2px 10px;
-  background-color: #e8eaf6;
-  border: 1px solid #e8eaf6;
+  background-color: #c8ddf1;
+  border: 1px solid #c8ddf1;
   width: 100%;
   color: #337ab7;
   border: 1px solid #dddddd;
@@ -7356,8 +7356,8 @@ h6:focus .moin-permalink {
 .moin-user-action-special:focus,
 .moin-user-action-special:active,
 .moin-user-action-special.active {
-  color: #fff;
-  background-color: #337ab7;
+  color: #23527c;
+  background-color: #f5f5f5;
   border: 1px solid #dddddd;
 }
 .moin-viewoptions,
@@ -7366,7 +7366,7 @@ h6:focus .moin-permalink {
   float: right;
 }
 a.moin-showhide {
-  color: #e8eaf6;
+  color: #c8ddf1;
 }
 a:focus.moin-showhide {
   outline-width: 0;
@@ -7377,21 +7377,21 @@ a:focus.moin-showhide {
 .list-group-item {
   text-align: left;
   padding: 2px 10px;
-  background-color: #e8eaf6;
-  border: 1px solid #e8eaf6;
+  background-color: #c8ddf1;
+  border: 1px solid #c8ddf1;
 }
 .list-group-item > a {
   color: #00417f;
 }
 .moin-list-heading {
-  background-color: #1a237e;
-  border: 1px solid #1a237e;
+  background-color: #00417f;
+  border: 1px solid #00417f;
   font-variant: small-caps;
-  color: #e8eaf6;
+  color: #c8ddf1;
   border-radius: 4px 4px 0px 0px;
 }
 .moin-list-heading > a {
-  color: #e8eaf6;
+  color: #c8ddf1;
 }
 .moin-nav {
   margin-bottom: 0;
@@ -7469,7 +7469,7 @@ a:focus.moin-showhide {
 .moin-navbar-inverse {
   background-color: #222222;
   border-color: #080808;
-  background-color: #1a237e;
+  background-color: #00417f;
   padding-left: 0px;
   padding-right: 0px;
 }
@@ -7572,19 +7572,19 @@ fieldset[disabled] .moin-navbar-inverse .btn-link:focus {
   color: #444444;
 }
 .moin-navbar-inverse .navbar-nav > li > a {
-  color: #e9ebfa;
+  color: #cce6ff;
 }
 .moin-navbar-inverse .navbar-nav > li > a.active {
   color: #ffffff;
 }
 .moin-navbar-inverse .navbar-text {
-  color: #e9ebfa;
+  color: #cce6ff;
 }
 .moin-navbar-inverse .navbar-text > a {
-  color: #e9ebfa;
+  color: #cce6ff;
 }
 .moin-navbar-inverse .navbar-brand {
-  color: #e9ebfa;
+  color: #cce6ff;
 }
 .moin-navbar-user > ul.nav > li,
 .moin-navbar-user > ul.nav > li > a {
@@ -7600,8 +7600,8 @@ fieldset[disabled] .moin-navbar-inverse .btn-link:focus {
 .moin-quicklink {
   position: relative;
   padding: 2px 10px 2px 10px;
-  background-color: #e8eaf6;
-  border: 1px solid #e8eaf6;
+  background-color: #c8ddf1;
+  border: 1px solid #c8ddf1;
   margin-bottom: -1px;
 }
 .moin-quicklink > a {
@@ -7614,7 +7614,7 @@ fieldset[disabled] .moin-navbar-inverse .btn-link:focus {
 }
 .moin-quicklink:hover,
 .moin-quicklink:focus {
-  background-color: #337ab7;
+  background-color: #f5f5f5;
 }
 .moin-quicklink-label {
   display: block;
@@ -7821,7 +7821,7 @@ body {
   padding-left: 10px;
   border: 1px solid #555555;
   background-color: #00417f;
-  color: #e8eaf6;
+  color: #c8ddf1;
   border-radius: 5px;
 }
 .moin-search-option-bar > span {
