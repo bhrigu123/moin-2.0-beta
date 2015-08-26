@@ -132,9 +132,9 @@
     <script src="{{ url_for('serve.files', name='markitup', filename='jquery.markitup.js') }}"></script>
     <script src="{{ url_for('serve.files', name='bootstraptagsinput', filename='bootstrap-tagsinput.js') }}"></script>
     <script type="text/javascript" >
+       $('#f_meta_form_tags').tagsinput();
        $(document).ready(function() {
         $('.markItUp').markItUp(myMarkdownSettings);
-        $('#f_meta_form_tags').tagsinput();
        });
        $('.moin-float-fix').children()[0].value="Save";
        $('.moin-float-fix').css("margin-top","0%");
