@@ -137,6 +137,9 @@
                 </div>
             {%- endblock %}
               <!-- Footer -->
+              <!-- Empty div with footer height to prevent overlapping when page is filled with content-->
+            <div style="height:90px;">              
+            </div>
             <footer class="footer">
             {% block footer %}
               {% block footer_meta %}{% endblock %}

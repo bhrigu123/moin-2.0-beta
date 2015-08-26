@@ -218,6 +218,9 @@
                 {{ before_footer }}
 
                 {% block footer %}
+                <!-- Empty div with footer height to prevent overlapping when page is filled with content-->
+                    <div style="height:120px">                       
+                    </div>
                     <div class="navbar moin-footer">
                         {% block footer_hr %}<hr/>{% endblock %}
                         {% block footer_meta %}{% endblock %}
