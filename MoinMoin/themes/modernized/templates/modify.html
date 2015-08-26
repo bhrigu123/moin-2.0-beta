@@ -27,6 +27,8 @@
   <link media="all" rel="stylesheet" href="{{ url_for('serve.files', name='markitup', filename='skins/markitup/style.css') }}" />
   <link media="all" rel="stylesheet" href="{{ url_for('serve.files', name='markitup', filename='sets/markdown/style.css') }}" />
   <link media="all" rel="stylesheet" href="{{ url_for('serve.files', name='bootstraptagsinput', filename='bootstrap-tagsinput.css') }}" />
+
+  <!-- Loading the wiki editor JSON settings according to the wiki type -->
 {% if meta['contenttype']|shorten_ctype   == 'Wiki (Moinmoin)' %}
         <script src="{{ url_for('serve.files', name='markitup', filename='js/wiki_moinmoin/set.js') }}"></script>
     {% elif meta['contenttype']|shorten_ctype == 'Markdown' %}
@@ -125,7 +127,10 @@
     </div>
 {% endblock %}
 
- {% block options_for_javascript %}
+{% block body_scripts %}
+    {{ super() }}
+    <script src="{{ url_for('serve.files', name='markitup', filename='jquery.markitup.js') }}"></script>
+    <script src="{{ url_for('serve.files', name='bootstraptagsinput', filename='bootstrap-tagsinput.js') }}"></script>
     <script type="text/javascript" >
        $(document).ready(function() {
         $('.markItUp').markItUp(myMarkdownSettings);

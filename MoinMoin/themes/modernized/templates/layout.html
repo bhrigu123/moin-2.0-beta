@@ -147,9 +147,12 @@
            </footer>
     </div>
   </div>
+{% endblock %}
 
- <script src="{{ url_for('serve.files', name='jquery', filename='jquery.min.js') }}"></script>
- <script>
+{% block body_scripts %}
+    {{ super() }}
+<script src="{{ url_for('serve.files', name='bootstrapoverflownavs', filename='overflow-nav.js') }}"></script>
+<script>
     $( document ).ready(function() {
         $("#quicklinks").overflowNavs({
           "more" : "More",

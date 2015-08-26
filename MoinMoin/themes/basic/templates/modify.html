@@ -78,9 +78,9 @@
 
                 {% set field = form['meta_form']['acl'] %}
                 {% if user.may.admin(fqname) %}
-                    <div class="tab-pane active" id="acl">
+                    <div class="tab-pane" id="acl">
                         <div class="row">
-                            <div class="col-md-6">
+                            <div class="col-md-6 center-block ">
                                 <div class="form-group">
                                     {{ gen.label(field) }}
                                     {{ gen.textarea(field, rows='1', class='form-control') }}
@@ -102,7 +102,7 @@
             {{ forms.render_errors(form['meta_text']) }}
             #}
             {% if not form['content_form'].is_draw %}
-                <div class="form-group">
+                <div class="form-group" style=" margin: 0 auto; width:50%">
                     {{ forms.render_textcha(gen, form) }}
                     {{ gen.input(form['comment'], type="text", class="form-control") }}
                 </div>
@@ -115,17 +115,17 @@
     </div>
 {% endblock %}
 
-{% block options_for_javascript %}
-    <script src="{{ url_for('serve.files', name='jquery', filename='jquery.min.js') }}"></script>
+{% block body_scripts %}
+    {{ super() }}
+    <script src="{{ url_for('serve.files', name='markitup', filename='jquery.markitup.js') }}"></script>
     <script src="{{ url_for('serve.files', name='bootstraptagsinput', filename='bootstrap-tagsinput.js') }}"></script>
-
     <script type="text/javascript" >
        $(document).ready(function() {
         $('.markItUp').markItUp(myMarkdownSettings);
         $('#f_meta_form_tags').tagsinput();
        });
        $('.moin-float-fix').children()[0].value="Save";
-       $('.moin-float-fix').css("margin-top","-1%");
+       $('.moin-float-fix').css("margin-top","0%");
     </script>
     {%- if user.scroll_page_after_edit -%}
         <br id="moin-scroll-page-after-edit" />
