@@ -120,7 +120,7 @@ a:focus.moin-showhide {
   border: 1px solid @navbar-bg;
   font-variant: small-caps;
   color: @search_option_bar_text_color;
-  border-radius: 4px;
+  border-radius: 4px 4px 0px 0px;
   > a {
     color: @search_option_bar_text_color;
   }
@@ -287,6 +287,9 @@ a.wikilink{
       padding: 0px;
     }
   }
+  background-color: white;
+  padding-bottom: 10px !important;
+
 }
 ul.moin-breadcrumb ul.moin-alias{
   background-color: @search_option_bar_color;
@@ -317,7 +320,7 @@ ul.moin-breadcrumb li:hover ul.moin-alias{
   display: block;
 }
 .moin-thead{
-    background-color: silver;
+  background-color: silver;
 }
 html, body {
   height: 100%;
@@ -336,6 +339,8 @@ html, body {
 }
 .moin-content {
   padding-bottom: 10%;
+  min-height: 620px;
+
 }
 .moin-search-option-bar {
   padding-left: 10px;
@@ -444,4 +449,59 @@ img {
   .navbar-toggle .icon-bar + .icon-bar {
     margin-top: 4px;
   }
+}
+.moin-button-danger {
+  background: #aed4fa;
+  border: 1px solid #00417F;
+  border-radius: 6px; cursor: pointer;
+  font-size: 0.75em;
+  font-weight: bold; padding: 4px 15px;
+  margin: .3em;
+}
+.userbrowser-form input{
+  width: 120px;
+}
+.userbrowser{
+  padding-left: 0px;
+  width: 395px;
+  margin-left: 48px;
+}
+
+/* Site navigation box*/
+.site-navigation{
+  margin-bottom: 1px;
+  border-radius: 4px 4px 4px 4px;
+}
+.view-options{
+  border-radius: 4px 4px 0px 0px;
+}
+.user-actions{
+  border-radius: 0px 0px 0px 0px;
+}
+.item-actions{
+  border-radius: 0px 0px 4px 4px;
+}
+.quicklinks-box{
+  height:150px;
+  overflow-y:scroll;
+}
+#f_content_form_data_text{
+  width: 100% !important;
+}
+.markItUpContainer{
+    width: 100% !important;
+}
+#markItUpF_content_form_data_text{
+    width: 100% !important;
+}
+.bootstrap-tagsinput{
+  display:block !important;
+}
+#editor > dl {
+  float:left !important;
+}
+.moin-footer{
+  width: 96%;
+  position: absolute;
+  bottom: 0;
 }

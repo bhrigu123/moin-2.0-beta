@@ -1,5 +1,5 @@
 {% set exists = fqname and storage.get_item(**fqname.query) %}
-<ul class="moin-itemviews panel">
+<ul class="moin-itemviews moin-panel">
     {%- for endpoint, label, title, check_exists in cfg.item_views if not endpoint in cfg.endpoints_excluded %}
         {%- if not check_exists or check_exists and exists %}
             {%- if endpoint in [
@@ -92,3 +92,4 @@
         {%- endif %}
     {%- endfor %}
 </ul>
+<hr style="margin-top: -1px;margin-bottom: 0px;" >

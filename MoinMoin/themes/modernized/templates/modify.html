@@ -27,6 +27,8 @@
   <link media="all" rel="stylesheet" href="{{ url_for('serve.files', name='markitup', filename='skins/markitup/style.css') }}" />
   <link media="all" rel="stylesheet" href="{{ url_for('serve.files', name='markitup', filename='sets/markdown/style.css') }}" />
   <link media="all" rel="stylesheet" href="{{ url_for('serve.files', name='bootstraptagsinput', filename='bootstrap-tagsinput.css') }}" />
+
+  <!-- Loading the wiki editor JSON settings according to the wiki type -->
 {% if meta['contenttype']|shorten_ctype   == 'Wiki (Moinmoin)' %}
         <script src="{{ url_for('serve.files', name='markitup', filename='js/wiki_moinmoin/set.js') }}"></script>
     {% elif meta['contenttype']|shorten_ctype == 'Markdown' %}
@@ -49,60 +51,70 @@
                For *Draw content, hide submit button and form['comment'], since *Draw
                POSTs originate from their respective applets.
             #}
-            <ul class="moin-nav nav-tabs moin-shadow">
-                <li class="active"><a href="#editor" data-toggle="tab">Edit Content</a></li>
-                <li><a href="#meta" data-toggle="tab">Edit Meta</a></li>
-                {% if user.may.admin(fqname) %}
+
+  <!-- Nav tabs -->
+  <ul class="nav nav-tabs" role="tablist">
+    <li class="active"><a href="#editor" data-toggle="tab">Edit Content</a></li>
+    <li><a href="#meta" data-toggle="tab">Edit Meta</a></li>
+    {% if user.may.admin(fqname) %}
                     <li><a href="#acl" data-toggle="tab">Edit ACL</a></li>
-                {% endif %}
-                <li><a href="#help" data-toggle="tab">Help</a></li>
-            </ul>
-            <div class="tab-content">
-                <div class="tab-pane active" id="editor">
-                    {{ data_editor(form['content_form'], item_name, class="markItUp ") }}
-                </div>
-                <div class="tab-pane active" id="meta">
-                    <div class="row">
-                        <div class="col-md-6">
-                            {{ basic_meta_editor(form['meta_form']) }}
-                        </div>
-                        {% set field = form['extra_meta_text'] %}
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                {{ gen.label(field) }}
-                                {{ gen.textarea(field, rows=field.properties.rows|string, cols=field.properties.cols|string, class='form-control') }}
-                            </div>
-                        </div>
-                    </div>
-                </div>
+    {% endif %}
+    <li><a href="#help" data-toggle="tab">Help</a></li>
+  </ul>
 
-                {% set field = form['meta_form']['acl'] %}
-                {% if user.may.admin(fqname) %}
-                    <div class="tab-pane" id="acl">
-                        <div class="row">
-                            <div class="col-md-6 center-block ">
-                                <div class="form-group">
-                                    {{ gen.label(field) }}
-                                    {{ gen.textarea(field, rows='1', class='form-control') }}
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                {% else %}
-                    {{ gen.input(field, type='hidden', class='form-control') }}
-                {% endif %}
+  <!-- Tab panes -->
+  <div class="tab-content">
+    <div class="tab-pane active" id="editor">
+    {% if meta['contenttype']|shorten_ctype   == 'HTML' %}
+        {{ data_editor(form['content_form'], item_name) }}
+    {% else %}
+        {{ data_editor(form['content_form'], item_name, class="markItUp") }}
+     {% endif %}
 
-                <div class="tab-pane active" id="help">
-                    {{ utils.help_on_editing(help) }}
+    </div>
+    <div role="tabpanel" class="tab-pane" id="meta">
+        <div class="row moin-editor-tabs">
+            <div class="col-md-6">
+
+                {{ basic_meta_editor(form['meta_form']) }}
+            </div>
+            {% set field = form['extra_meta_text'] %}
+            <div class="col-md-6">
+                <div class="form-group">
+                    {{ gen.label(field) }}
+                    {{ gen.textarea(field, rows="11"|string, cols=field.properties.cols|string, class='form-control') }}
                 </div>
             </div>
-            {#
-            {{ gen.textarea(form['meta_text'], lang='en', dir='ltr', rows=rows_meta, cols=cols) }}
-            <br />
-            {{ forms.render_errors(form['meta_text']) }}
-            #}
+        </div>
+    </div>
+    {% set field = form['meta_form']['acl'] %}
+    {% if user.may.admin(fqname) %}
+        <div  role="tabpanel" class="tab-pane" id="acl">
+            <div class="row moin-editor-tabs">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        {{ gen.label(field) }}
+                        {{ gen.textarea(field, rows='1', class='form-control') }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% else %}
+        {{ gen.input(field, type='hidden', class='form-control') }}
+    {% endif %}
+        <div role="tabpanel" class="tab-pane " id="help">
+            <div class="row moin-editor-tabs">
+                {{ utils.help_on_editing(help) }}
+            </div>
+        </div>
+    </div>
+    {#
+    {{ gen.textarea(form['meta_text'], lang='en', dir='ltr', rows=rows_meta, cols=cols) }}
+    <br />
+    {{ forms.render_errors(form['meta_text']) }}
+    #}
             {% if not form['content_form'].is_draw %}
-                <div class="form-group" style=" margin: 0 auto; width:50%">
+                <div class="col-xs-4 center-block" style="float:none;">
                     {{ forms.render_textcha(gen, form) }}
                     {{ gen.input(form['comment'], type="text", class="form-control") }}
                 </div>
@@ -120,9 +132,9 @@
     <script src="{{ url_for('serve.files', name='markitup', filename='jquery.markitup.js') }}"></script>
     <script src="{{ url_for('serve.files', name='bootstraptagsinput', filename='bootstrap-tagsinput.js') }}"></script>
     <script type="text/javascript" >
+       $('#f_meta_form_tags').tagsinput();
        $(document).ready(function() {
         $('.markItUp').markItUp(myMarkdownSettings);
-        $('#f_meta_form_tags').tagsinput();
        });
        $('.moin-float-fix').children()[0].value="Save";
        $('.moin-float-fix').css("margin-top","0%");

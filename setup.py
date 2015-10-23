@@ -98,7 +98,7 @@ setup_args = dict(
         'pdfminer==20110515',  # pdf -> text/plain conversion, XXX 20131113 fails see #385
         'passlib>=1.6.0',  # strong password hashing (1.6 needed for consteq)
         'XStatic>=0.0.2',  # support for static file pypi packages
-        'XStatic-Bootstrap==3.1.1.2',
+        'XStatic-Bootstrap==3.3.5.1',
         'XStatic-Font-Awesome>=4.1.0.0',
         'XStatic-CKEditor>=3.6.1.2',
         'XStatic-autosize',
@@ -109,6 +109,10 @@ setup_args = dict(
         'XStatic-svg-edit-moin>=2012.11.15.1',
         'XStatic-JQuery.TableSorter>=2.14.5.1',
         'XStatic-Pygments>=1.6.0.1',
+        'Xstatic-MarkitUp==1.1.14.1',
+        'Xstatic-BootstrapTagsInput==0.5.1',
+        'XStatic-BootstrapoverflowNavs==1.1',
+
     ],
     # optional features and their list of requirements
     extras_require={

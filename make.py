@@ -361,33 +361,12 @@ class Commands(object):
             print 'Error: cannot backup wiki because it has not been created.'
 
     def cmd_css(self, *args):
-        """run Stylus and lessc to update CSS files"""
+        """run lessc to update CSS files"""
         # Note: we use / below within file paths; this works in Windows XP, 2000, 7, 8
         bootstrap_loc = get_bootstrap_data_location().strip() + '/less'
         pygments_loc = get_pygments_data_location().strip() + '/css'
-        modernized_loc = 'MoinMoin/themes/modernized/static/css/stylus'
+        modernized_loc = 'MoinMoin/themes/modernized/static/custom-less'
         basic_loc = 'MoinMoin/themes/basic/static/custom-less'
-
-        print 'Running lessc to create normalize.css for modernized theme...'
-        command = 'lessc {0}/normalize.less > {1}/normalize.css'.format(bootstrap_loc, modernized_loc)
-        result = subprocess.call(command, shell=True)
-        if result == 0:
-            print 'Success: normalize.css created for modernized theme.'
-        else:
-            print 'Error: creation of normalize.css failed, see error messages above.'
-
-        print 'Running Stylus to update Modernized theme CSS files...'
-        command = 'cd {0}{1}stylus --include {2} --include-css --compress < theme.styl > ../theme.css'.format(modernized_loc, SEP, pygments_loc)
-        result = subprocess.call(command, shell=True)
-        if result == 0:
-            print 'Success: Modernized CSS files updated.'
-        else:
-            print 'Error: stylus failed to update css files, see error messages above.'
-        # stylus adds too many blank lines at end of modernized theme.css, fix it by running coding_std against css directory
-        command = 'python contrib/pep8/coding_std.py MoinMoin/themes/modernized/static/css'
-        result = subprocess.call(command, shell=True)
-        if result != 0:
-            print 'Error: failure running coding_std.py against modernized css files'
 
         print 'Running lessc to update Basic theme CSS files...'
         if WINDOWS_OS:
@@ -395,12 +374,19 @@ class Commands(object):
         else:
             data_loc = '{0}:{1}'.format(bootstrap_loc, pygments_loc)
         include = '--include-path=' + data_loc
-        command = 'cd {0}{1}lessc {2} theme.less ../css/theme.css'.format(basic_loc, SEP, include)
-        result = subprocess.call(command, shell=True)
+        command_basic = 'cd {0}{1}lessc {2} theme.less ../css/theme.css'.format(basic_loc, SEP, include)
+        command_modernized = 'cd {0}{1}lessc {2} theme.less ../css/theme.css'.format(modernized_loc, SEP, include)
+        result = subprocess.call(command_basic, shell=True)
         if result == 0:
             print 'Success: Basic theme CSS files updated.'
         else:
             print 'Error: Basic theme CSS files update failed, see error messages above.'
+
+        result = subprocess.call(command_modernized, shell=True)
+        if result == 0:
+            print 'Success: Modernized theme CSS files updated.'
+        else:
+            print 'Error: Modernized theme CSS files update failed, see error messages above.'
 
     def cmd_tests(self, *args):
         """run tests, output goes to pytest.txt and pytestpep8.txt"""

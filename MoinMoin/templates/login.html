@@ -10,10 +10,20 @@
             {{ gen.form.open(form, method="post", action=url_for('frontend.login')) }}
                 <dl>
                     {% if 'username' in login_inputs %}
-                        {{ forms.render(form['username']) }}
+                        <dt>
+                            {{ gen.label(form['username']) }}
+                        </dt>
+                        <dd>
+                            {{ gen.input(form['username'], type="text", class="form-control", required="true") }}
+                        </dd>
                     {% endif %}
                     {% if 'password' in login_inputs %}
-                        {{ forms.render(form['password']) }}
+                        <dt>
+                            {{ gen.label(form['password']) }}
+                        </dt>
+                        <dd>
+                            {{ gen.input(form['password'], type="password", class="form-control", required="true", pattern=".{8,}", title="Password must be a minimum of 8 characters ") }}
+                        </dd>
                     {% endif %}
                 </dl>
                 {{ forms.render(form['submit']) }}

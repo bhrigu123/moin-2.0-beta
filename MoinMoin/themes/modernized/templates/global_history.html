@@ -1,0 +1,68 @@
+{% extends theme("layout.html") %}
+{% import "utils.html" as utils %}
+{# map meta.action to font awesome classes #}
+{% set awesome_class = {
+'REVERT': 'fa fa-undo',
+'SAVE': 'fa fa-save',
+'RENAME': 'fa fa-pencil-square-o',
+'TRASH': 'fa fa-trash-o',
+} %}
+
+{% block head %}
+    {{ super() }}
+    <link rel="alternate" title="Global History" href="{{ url_for('feed.atom') }}" type="application/atom+xml" />
+{% endblock %}
+{% block content %}
+    <h1>{{ _("Global History") }}</h1>
+{% for day, revs in history %}
+  {% set latest_timestamp = revs[0].meta['mtime'] %}
+  <div class="panel panel-primary">
+      <div class="panel-heading">
+          <div class="panel-title">{{ day }}
+              {% if user.valid %}
+                  <a class="set-bookmark-btn btn btn-success" href="{{ url_for('frontend.bookmark', time=latest_timestamp+1) }}">{{ _("Set bookmark") }}</a>
+              {% endif %}
+          </div>
+       </div>
+          <div class="history-panel panel-body">
+              <table class="table history-table table-hover">
+                  {% for rev in revs %}
+                      {% set meta = rev.meta %}
+
+                      <tbody>
+                          <tr>
+                              <td class="col-md-1"> <a href="{{ url_for('frontend.download_item', item_name=rev.fqname) }}"> <span title="{{ _(meta.action|title) }}" class="{{ awesome_class[meta.action] }}"></span></a></td>
+                              <td class="col-md-1"><a href="{{ url_for('frontend.history', item_name=rev.fqname, bookmark=bookmark_time) }}">HIST</a>
+                              {% if bookmark_time -%}
+                                  <a href="{{ url_for('frontend.diff', item_name=rev.fqname, bookmark=bookmark_time) }}">DIFF</a>
+                              {%- endif %}</td>
+                              <td class="col-md-2">{{ meta.mtime|timeformat }}</td>
+                              <td class="col-md-8"><a class="{{ meta.contenttype|contenttype_to_class }}" href="{{ url_for('frontend.show_item', item_name=rev.fqname) }}" title="{{ meta.contenttype }}">
+                                  {% if meta.name %}
+                                      {{ meta.name|join(' | ') }}
+                                  {% elif meta.summary %}
+                                      {{ meta.summary }}
+                                  {% else %}
+                                      {{ rev.fqname|shorten_fqname }}
+                                  {% endif %}
+                              </a></td>
+                              <td class="col-md-7"></td>
+                          </tr>
+                      {% endfor %}
+                  </tbody>
+
+              </table>
+          </div>
+      </div>
+{% endfor %}
+      {% if bookmark_time %}
+          <div class="panel panel-primary">
+              <div class="panel-heading">
+                  <div class="panel-tittle">
+                      {{ bookmark_time|datetimeformat }}
+                      <a class="del-bookmark-btn btn btn-danger" href="{{ url_for('frontend.bookmark', time='del') }}">{{ _("Delete bookmark") }}</a>
+                  </div>
+              </div>
+          </div>
+      {% endif %}
+{% endblock %}

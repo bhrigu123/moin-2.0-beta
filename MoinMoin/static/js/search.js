@@ -18,6 +18,7 @@ $(document).ready(function(){
     }));
 
     $('.moin-loginsettings').addClass('navbar-right');
+    $('.moin-loginsettings').css('margin-right','0');
 
     function ajaxify(query, allrevs, time_sorting, filetypes) {
         $.ajax({

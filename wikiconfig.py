@@ -118,6 +118,9 @@ class Config(DefaultConfig):
         'svgedit_moin', 'twikidraw_moin', 'anywikidraw',
         'jquery_tablesorter',
         'pygments',
+        'markitup',
+        'bootstraptagsinput',
+        'bootstrapoverflownavs',
     ]
     pkg = __import__('xstatic.pkg', fromlist=mod_names)
     for mod_name in mod_names:

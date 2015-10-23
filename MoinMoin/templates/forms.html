@@ -76,14 +76,22 @@ Helpers for using flatland with jinja2 to create html forms.
 {% macro annotated_input(field, type=none) %}
   {% set type = type or field.properties.widget %}
   <dt>
-    {% if type == 'checkbox' %}
+    {% if type == 'checkbox' or type == 'range' %}
       {{ _checkbox_label(field) }}
     {% else %}
       {{ gen.label(field) }}
     {% endif %}
   </dt>
   <dd>
-    {{ raw_input(field, type) }}
+    {% if type == 'text' or type =='password' or type == 'email' %}
+       {{ raw_input(field, type,class="form-control") }}
+      {% elif type == 'range' %}
+        {{ raw_input(field, type,oninput='this.nextElementSibling.value=this.value') |safe }}
+        <output name="amountInput">{{ field.value }}</output>
+      {% else %}
+        {{ raw_input(field, type) }}
+    {% endif %}
+
     {{ render_errors(field) }}
     {# TODO make the helper more explicit and look better #}
     {% if field.properties.helper %}
@@ -128,7 +136,7 @@ Helpers for using flatland with jinja2 to create html forms.
 {% endmacro %}
 
 {% macro any_integer(field) %}
-  {{ annotated_input(field, 'text') }}
+  {{ annotated_input(field, 'range') }}
 {% endmacro %}
 
 {% macro small_natural(field) %}

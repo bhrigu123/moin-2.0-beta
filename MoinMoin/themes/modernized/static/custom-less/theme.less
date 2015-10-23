@@ -1,0 +1,311 @@
+
+@import "notice.less";
+// Core variables and mixins
+
+@import "variables_modernized.less";
+@import "mixins.less";
+@import (less) "userstyles.css";
+
+// Reset and dependencies
+@import "normalize.less";
+@import "print.less";
+
+
+// Core CSS
+@import "scaffolding.less";
+@import "code.less";
+@import "grid.less";
+@import "tables.less";
+@import "forms.less";
+@import "buttons.less";
+
+// Components
+@import "component-animations.less";
+@import "dropdowns.less";
+@import "button-groups.less";
+@import "input-groups.less";
+@import "navs.less";
+@import "navbar.less";
+@import "breadcrumbs.less";
+@import "pagination.less";
+@import "pager.less";
+@import "labels.less";
+@import "badges.less";
+@import "jumbotron.less";
+@import "thumbnails.less";
+@import "alerts.less";
+@import "progress-bars.less";
+@import "media.less";
+@import "list-group.less";
+@import "panels.less";
+
+// Utility classes
+@import "utilities.less";
+@import "responsive-utilities.less";
+
+//User Theme
+@import "modernized.less";
+
+//Custom Styles on top of theme
+//Experimental
+.itemviews a {padding-top:5px !important; padding-bottom:5px !important; padding-right:10px !important; padding-left:5px !important}
+.submenu a {padding-left:5px !important; padding-top:5px !important; padding-bottom:5px !important; font-size:14px}
+
+//Home Page
+.moin-top-nav{
+  left: -16px;
+  width: 102.5%;
+}
+.navbar{
+  margin-bottom: 0px;
+}
+.navbar-brand{
+  height: 70px;
+  padding-top: 10px;
+  padding-left: 20px;
+}
+
+//Global History Page
+.set-bookmark-btn{
+  margin-left: 107px;
+}
+.history-panel{
+  padding-bottom: 0px;
+  padding-left: 0px;
+  padding-top: 0px;
+  padding-right: 0px;
+}
+.history-table{
+  margin-bottom: 0px;
+}
+.del-bookmark-btn{
+  margin-left: 25px;
+}
+
+//Universal
+.moin-itemviews{
+  .nav;
+  .nav-tabs;
+}
+.breadcrumb a {
+  color: white;
+}
+.breadcrumb{
+  color:white;
+  background-color:#444EB6;
+  margin-bottom:0px;
+  padding-top:0px;
+  padding-right:0px;
+  font-size:11px;
+  padding-bottom:0;
+  padding-left: 10px;
+}
+.footer{
+  bottom: 0;
+  width: 100%;
+  height: 90px;
+  background-color: #444EB6;
+  padding-top: 10px;
+  padding-right: 10px;
+  width: 100%;
+  position: absolute;
+}
+.footer a{
+  color: white;
+}
+#moin-creditlogos{
+  position: absolute;
+  top: 10px;
+  right: 12px;
+}
+#moin-pageinfo{
+  color:white;
+}
+.moin-button{
+  .btn ;
+  .btn-primary;
+}
+.moin-button-danger{
+  .btn !important;
+  .btn-danger !important;
+  margin-top: 4px;
+  margin-left: 3px;
+}
+.moin-body{
+  .row;
+  min-height: 100%;
+  position: relative;
+}
+
+// Overriding default settings in common.css
+h1,h2,h3,h4,h5,h6{
+  border-color: #3F51B5;
+}
+table{
+  margin: 0;
+}
+tr > th,
+tr > td { padding: 0; vertical-align: middle; text-align: left; }
+thead > tr > td,
+tr > th { border: 0 solid #4e7da9; background-color: #3F51B5; text-align: left; color: white; }
+tr > td { border: 0 solid #4e7da9; }
+td p { margin: 0; padding: 0; }
+
+.moin-tabs .moin-tab-titles a{ color: #00008b; }
+.moin-tab-titles{ margin: 0; padding: -10px 0 0; list-style: none; border-bottom: 3px solid #3F51B5; }
+.moin-tab-titles li { display: inline-block; *display: inline; zoom: 1; margin: 10px 0 -3px; padding: 0 5px; border-bottom: 3px solid #3F51B5; }
+.moin-tab-titles a { display: inline-block; padding: 4px; background-color: #E8EAF6 ; border-width: 1px 1px 0; border-style: solid;
+  border-color: #3F51B5; color: #00008b; border-top-left-radius: 7px; border-top-right-radius: 7px; }
+  .moin-tab-titles a.moin-current-tab { background: #3F51B5; padding-top: 8px; margin-top: -4px; color: white; }
+  .moin-tab-titles a.moin-current-tab .moin-change-indicator { font-weight: bold; color: white; }
+  .moin-tab-titles .moin-change-indicator { font-weight: bold; color: #3F51B5; }
+
+// Global Index
+.modernized-index-pagination{
+  margin-left:8%;
+}
+.moin-contenttypes-wrapper form input[type="submit"] {
+  margin-top: -5%;
+}
+
+//UserSetting
+.moin-float-fix{
+  text-align: center ;
+}
+#f_usersettings_subscriptions_subscriptions{
+  .form-control;
+  border:1px solid #3F51B5;
+  height: 80px !important;
+  margin-left: 25px;
+}
+.tip{
+  font-size: 13px ;
+}
+.container {
+  background-color: white;
+}
+
+body{
+  background-color: #E8EAF6;
+}
+.userbrowser-form input{
+  width: 170px;
+}
+.userbrowser{
+  padding-left: 24px;
+}
+.userbrowser-form{
+  width: 180px;
+}
+
+.markItUp{
+  background-color: white !important;
+}
+
+#moin-usersettings form input[type="password"],
+#moin-usersettings form input[type="text"],
+#moin-usersettings form input[type="email"]{
+  border: 1px solid rgba(63, 81, 181, 0.36);
+  padding-left: 7px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+#f_content_form_data_text{
+  width: 100% !important;
+  height: 773px !important;
+}
+.markItUpContainer{
+  width: 100%!important;
+}
+#markItUpF_content_form_data_text{
+  width: 100% !important;
+
+}
+.markItUpHeader{
+  width: 90% !important;
+}
+#moin-content {
+  min-height: 600px;
+  padding-bottom: 10%;
+}
+.moin-editor-tabs{
+  padding-top: 25px;
+}
+#moin-modify form textarea,#moin-modify form input[type="text"]{
+  border: 1px solid rgba(63, 81, 181, 0.36);
+  padding-left: 7px !important;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px !important;
+
+}
+.bootstrap-tagsinput{
+  display:block !important;
+}
+#editor > :first-child{
+  position: relative;
+  margin-bottom: 0px !important;
+  padding-left: 9px !important;
+  height: 23px;
+}
+#editor > :first-child >:first-child{
+  width: 8% !important;
+}
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+.moin-flash {
+  .alert;
+  &>a {
+    .alert .alert-link;
+  }
+}
+
+.moin-flash-hint {
+  &>a {
+    .alert-success .alert-link;
+  }
+  .alert-success;
+}
+
+.moin-flash-info {
+  &>a {
+    .alert-info .alert-link;
+  }
+  .alert-info;
+}
+
+.moin-flash-warning, .moin-flash-error, .moin-error {
+  &>a {
+    .alert-danger .alert-link;
+  }
+  &>li {
+    list-style-type: none;
+  }
+  .alert-danger;
+  padding-left: 0px;
+}
+#moin-flash  p,.moin-error  li{
+  padding-left: 8px;
+}
+.moin-error{
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+.moin-button:active{
+  color:white !important;
+}
+.moin-filter-toggle{
+  color: white !important;
+}
+.moin-button:hover,
+.moin-button:focus { box-shadow: none !important;  }
+.moin-contenttypes-wrapper > form{
+  margin-top: 4px;
+}
+a { outline: none !important; }

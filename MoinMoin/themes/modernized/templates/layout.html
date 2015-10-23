@@ -1,0 +1,167 @@
+{% extends "base.html" %}
+
+{% import "snippets.html" as snippets with context %}
+{% import theme("utils.html") as utils %}
+
+{% set logo = snippets.logo() %}
+{% set before_header = snippets.before_header() %}
+{% set after_header = snippets.after_header() %}
+{% set before_footer = snippets.before_footer() %}
+{% set after_footer = snippets.after_footer() %}
+{% set license_info = snippets.license_info() %}
+{% set creditlogos = snippets.creditlogos() %}
+{% set credits = snippets.credits() %}
+
+{% block layout %}
+
+  <div class="container">
+  <!-- Top Navigation -->
+  <nav class="navbar navbar-inverse moin-top-nav">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">
+        <div class="row">
+          {{ logo }}
+          {{ cfg.sitename }}
+        </div>
+      </a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <form class="navbar-form navbar-right" action="/+search" method="get">
+        <div class="form-group">
+          <input type="text" name ="q"  class="form-control" placeholder="Search">
+        </div>
+        <button type="submit" class="btn btn-default">Submit</button>
+      </form>
+      <ul class="nav navbar-nav navbar-right">
+        {% if user.valid -%}
+          {% set avatar = user.avatar(20) %}
+          {% if avatar %}
+              <img id="moin-avatar" src="{{ avatar }}" />
+            {%- endif %}
+            {% if user.name -%}
+              {% set wiki_href, display_name, title, exists = theme_supp.userhome() %}
+              <li>
+                <a href="{{ wiki_href }}" {% if not exists %}class="moin-nonexistent"{% endif %} rel="nofollow" title="{{ title }}">
+              {{ display_name }}</a>
+            </li>
+              {% if 'frontend.usersettings' not in cfg.endpoints_excluded -%}
+                <li>
+                  <a href="{{ url_for('frontend.usersettings') }}" class="moin-usersettings" rel="nofollow">
+                    {{ _('Settings') }}
+                  </a>
+                </li>
+              {%- endif %}
+            {%- endif %}
+              {% if user.auth_method in cfg.auth_can_logout %}
+                <li>
+                  <a href="{{ url_for('frontend.logout', logout_submit=1) }}" class="moin-logout" rel="nofollow">
+                    {{ _('Logout') }}
+                  </a>
+                </li>
+              {% endif %}
+            {% else %}
+              {% set login_url = theme_supp.login_url() %}
+            {% if login_url %}
+              <li>
+                <a href="{{ login_url }}" class="moin-login" rel="nofollow">
+                  {{ _('Login') }}
+                </a>
+              </li>
+            {% endif %}
+          {%- endif %}
+      </ul>
+    </div>
+  </div>
+    <div>
+      {{ utils.breadcrumbs(theme_supp.path_breadcrumbs, title_name) }}
+    </div>
+  </nav>
+
+  <!-- Sub menu navigation tabs-->
+  <div class="submenu row">
+      {% set navibar_items = theme_supp.navibar(fqname) %}
+      {% if navibar_items %}
+        <div class="col-md-6" >
+            <ul class="nav nav-tabs moin-panel" >
+                {% for cls, url, text, title in navibar_items if cls != 'userlink' %}
+                    <li>
+                        <a href="{{ url }}" >
+                            {{ text }}
+                        </a>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="col-md-6" >
+          <div class="nav-collapse">
+            <ul class="nav nav-tabs" id="quicklinks">
+              {% for cls, url, text, title in navibar_items if cls == 'userlink' %}
+                  <li>
+                      <a href="{{ url }}" >
+                          {{ text }}
+                      </a>
+                  </li>
+              {% endfor %}
+            </ul>
+          </div>
+        </div>
+      {% endif %}
+  </div>
+  <!-- Item Views -->
+  <div class="itemviews">
+      {% block header_itemviews %}{% endblock %}
+  </div>
+
+  <!-- Wiki Body -->
+    <div class="moin-body">
+            {% block item -%}
+                {# If you want itemviews in your template, extend from show.html, not from here. #}
+                <div class="container" id="moin-content">
+                    <div id="moin-flash">
+                        {# client side javascript may add messages here #}
+                        {% for category, msg in get_flashed_messages(with_categories=true) %}
+                            <p class="moin-flash moin-flash-{{ category }}">
+                                {{ msg }}
+                            </p>
+                        {% endfor %}
+                    </div>
+                    {% block content %}
+                        {# All content templates should have implement this block. #}
+                    {% endblock %}
+                </div>
+            {%- endblock %}
+              <!-- Footer -->
+              <!-- Empty div with footer height to prevent overlapping when page is filled with content-->
+            <div style="height:90px;">              
+            </div>
+            <footer class="footer">
+            {% block footer %}
+              {% block footer_meta %}{% endblock %}
+              {{ creditlogos }}
+              {{ credits }}
+              {{ license_info }}
+            {% endblock %}
+           </footer>
+    </div>
+  </div>
+{% endblock %}
+
+{% block body_scripts %}
+    {{ super() }}
+<script src="{{ url_for('serve.files', name='bootstrapoverflownavs', filename='overflow-nav.js') }}"></script>
+<script>
+    $( document ).ready(function() {
+        $("#quicklinks").overflowNavs({
+          "more" : "More",
+          "parent" : ".nav-collapse",
+          "override_width" : true
+        });
+    });
+  </script>
+{% endblock %}

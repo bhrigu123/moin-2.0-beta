@@ -1,6 +1,8 @@
 $(document).ready(function () {
     "use strict";
     $('.moin-loginsettings').addClass('navbar-right');
+    $('.moin-loginsettings').css('margin-right','0');
+
 
     // executed when user clicks tickets tab tags button and conditionally on page load
     $('.ticket-tags-toggle').click(function () {
