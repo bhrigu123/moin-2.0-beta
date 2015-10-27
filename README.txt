@@ -25,8 +25,6 @@ resources and information about MoinMoin development status and plans.
 In general, please make sure that documentation you read on the wiki or
 somewhere else on the web is written for the moin version you are using.
 
-For support, please try the documentation, the homepage, the irc channel
-and the mailing list before contacting the MoinMoin authors directly.
 
 If you have trouble with apache (or other webserver) configuration, please
 try reading the web server's documentation. Same thing applies for any other
